@@ -5,9 +5,9 @@ import com.rumos.banco.menu.Menu;
 
 public class Cliente {
 
-    int numCliente, telefone, conta, cartao;
-    String nome, email, profissao;
-    double saldo;
+    public int numCliente, telefone, conta, cartao;
+    public String nome, email, profissao;
+    public double saldo;
     Banco b = new Banco();
 
     public Cliente() {
