@@ -1,5 +1,8 @@
 package com.rumos.banco;
 
+import com.rumos.banco.clientes.Cliente;
+import com.rumos.banco.menu.Menu;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -123,4 +126,4 @@ public class Main {
 
     }
 }
-}
+
