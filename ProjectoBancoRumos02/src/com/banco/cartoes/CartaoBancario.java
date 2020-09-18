@@ -4,6 +4,16 @@ import com.banco.operacoes.Operacoes;
 
 public class CartaoBancario implements Operacoes {
 
+    int numCartao;
+
+    public void setNumCartao(int numCartao) {
+        this.numCartao = numCartao;
+    }
+
+    public int getNumCartao() {
+        return numCartao;
+    }
+
     @Override
     public void depositar() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
