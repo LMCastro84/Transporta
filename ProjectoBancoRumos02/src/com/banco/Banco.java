@@ -43,5 +43,20 @@ public class Banco {
     
     public void eliminarCliente(){}
     
+    public ContaOrdem criaContaOrdem(){
+        return null;
+    }
+    
+    public ContaPrazo criaContaPrazo(){
+        return null;
+    }
+    
+    public ContaPoupanca criaPoupanca(){
+        return null;
+    }
+    
+    public ContaInvestimento(){
+        return null;
+    }
     
 }
