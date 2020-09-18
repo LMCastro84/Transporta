@@ -1,6 +1,7 @@
 package com.rumos.banco.clientes;
 
 import com.rumos.banco.Banco;
+import com.rumos.banco.menu.Menu;
 
 public class Cliente {
 
