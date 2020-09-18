@@ -7,10 +7,12 @@ public class Banco {
 
     private int numAgencia;
     private String moradaAgencia;
-    public List<Cliente> clientes ArrayList<>();
+    public List<Cliente> clientes = new ArrayList<>();
     
     Menu menu = new Menu();
 
+    public Banco(){}
+    
     public Banco(int numAgencia, String moradaAgencia, List<Cliente> clientes) {
         this.numAgencia = numAgencia;
         this.moradaAgencia = moradaAgencia;
