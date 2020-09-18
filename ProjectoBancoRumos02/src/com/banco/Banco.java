@@ -1,6 +1,10 @@
 package com.banco;
 
 import com.banco.clientes.Cliente;
+import com.banco.contas.ContaInvestimento;
+import com.banco.contas.ContaOrdem;
+import com.banco.contas.ContaPoupanca;
+import com.banco.contas.ContaPrazo;
 import com.banco.output.Menu;
 import java.util.ArrayList;
 import java.util.List;
@@ -57,7 +61,7 @@ public class Banco {
         return null;
     }
     
-    public ContaInvestimento(){
+    public ContaInvestimento criaContaInvestimento(){
         return null;
     }
     
