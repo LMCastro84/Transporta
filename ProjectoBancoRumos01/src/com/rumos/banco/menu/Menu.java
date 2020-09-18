@@ -1,5 +1,6 @@
 package com.rumos.banco.menu;
 
+import com.rumos.banco.Banco;
 import java.util.Scanner;
 
 public class Menu {
