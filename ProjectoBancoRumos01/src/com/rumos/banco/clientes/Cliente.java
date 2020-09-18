@@ -1,5 +1,7 @@
 package com.rumos.banco.clientes;
 
+import com.rumos.banco.Banco;
+
 public class Cliente {
 
     int numCliente, telefone, conta, cartao;
