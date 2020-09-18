@@ -20,4 +20,6 @@ public class Agencia {
     public Cliente criarCliente (){
         return null;
     }
+    
+    public void eliminarCliente(){}
 }
