@@ -9,7 +9,7 @@ public class Banco {
     String nomeBanco = "BANCO JAVA";
     List<Cliente> clientes = new ArrayList<>();
 
-    String getNomeBanco() {
+    public String getNomeBanco() {
         return nomeBanco;
     }
 
