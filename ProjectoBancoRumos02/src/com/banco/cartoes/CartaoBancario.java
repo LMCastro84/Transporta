@@ -6,6 +6,10 @@ public class CartaoBancario implements Operacoes {
 
     int numCartao;
 
+    public CartaoBancario(int numCartao) {
+        this.numCartao = numCartao;
+    }
+
     public void setNumCartao(int numCartao) {
         this.numCartao = numCartao;
     }
