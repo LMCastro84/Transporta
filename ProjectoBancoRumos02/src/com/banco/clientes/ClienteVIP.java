@@ -1,5 +1,6 @@
 package com.banco.clientes;
 
-public class ClienteVIP {
-
+public class ClienteVIP extends Cliente{
+    
+    
 }
