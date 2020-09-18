@@ -1,6 +1,8 @@
 package com.banco.contas;
 
-public class Conta {
+import com.banco.operacoes.Operacoes;
+
+public class Conta implements Operacoes{
 
     private int numConta;
     private double saldo;
@@ -20,6 +22,26 @@ public class Conta {
 
     public double getSaldo() {
         return saldo;
+    }
+
+    @Override
+    public void depositar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void levantar() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void transferir() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public void mostrarSaldo() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     
