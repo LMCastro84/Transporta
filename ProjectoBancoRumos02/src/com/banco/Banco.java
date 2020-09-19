@@ -50,8 +50,8 @@ public class Banco {
 
     public Cliente getClienteById(int id) {
         Cliente cliente = null;
-        for(int i = 0; i < clientes.size(); i++){
-            if (id == clientes.get(i).getNumCliente()){
+        for (int i = 0; i < clientes.size(); i++) {
+            if (id == clientes.get(i).getNumCliente()) {
                 cliente = clientes.get(i);
             }
         }
@@ -73,6 +73,16 @@ public class Banco {
 
     public void updateClienteString(int id) {
         Cliente cliente = getClienteById(id);
+    }
+
+    public void listarClientes() {
+        if (clientes.size() >= 1) {
+            for (int i = 0; i < clientes.size(); i++) {
+                System.out.println("Lista clientes - teste");
+            }
+        }else {
+            System.out.println("De momento não existe nenhum cliente registado!");
+        }
     }
 
     public ContaOrdem criaContaOrdem() {
