@@ -16,7 +16,7 @@ public class Banco {
     public List<Agencia> agencias = new ArrayList<>();
     public List<Cliente> clientes = new ArrayList<>();
     public List<Cliente> clientesPorto = new ArrayList<>();
-    public List<Cliente> clientesLisboa= new ArrayList<>();
+    public List<Cliente> clientesLisboa = new ArrayList<>();
 
     Agencia agenciaPorto = new Agencia(1, "Avenida da Boavista", clientes);
     Agencia agenciaLisboa = new Agencia(2, "Avenida da Liberdade", clientes);
@@ -48,20 +48,30 @@ public class Banco {
         return moradaAgencia;
     }
 
+    public Cliente getClienteById(int id) {
+        Cliente cliente = null;
+        for(int i = 0; i < clientes.size(); i++){
+            if (id == clientes.get(i).getNumCliente()){
+                cliente = clientes.get(i);
+            }
+        }
+        return cliente;
+    }
+
     public void criarCliente(Cliente cliente) {
         clientes.add(cliente);
     }
 
     public void eliminarCliente(int numCliente) {
-        for(int i = 0; i < clientes.size() ; i++){
+        for (int i = 0; i < clientes.size(); i++) {
             clientes.get(i);
-            if(numCliente == clientes.get(i).getNumAgencia()){
+            if (numCliente == clientes.get(i).getNumAgencia()) {
                 clientes.remove(i);
             }
         }
     }
-    
-    public void updateClienteString(int id){
+
+    public void updateClienteString(int id) {
         Cliente cliente = getClienteById(id);
     }
 
