@@ -17,7 +17,8 @@ public class Banco {
     public List<Cliente> clientesPorto = new ArrayList<>();
     public List<Cliente> clientesLisboa = new ArrayList<>();
     
-
+    Agencia agenciaPorto = new Agencia(1, "Avenida da Boavista", clientesPorto);
+    Agencia agenciaLisboa = new Agencia(2, "Avenida da Liberdade", clientesLisboa);
 
     Menu menu = new Menu();
 
