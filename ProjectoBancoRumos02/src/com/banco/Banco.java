@@ -18,6 +18,7 @@ public class Banco {
     public List<Cliente> clientesLisboa = new ArrayList<>();
 
     Menu menu = new Menu();
+    Agencia agencia = new Agencia();
 
     public Banco() {
     }
@@ -81,16 +82,23 @@ public class Banco {
 
     public void adicionarCliente(Cliente cliente) {
         clientes.add(cliente);
-        alocarClienteAgencia(cliente);
+        alocarClienteGeralAgencia(cliente);
     }
 
-    public void alocarClienteAgencia(Cliente cliente) {
-        for (int i = 0; i < agencias.size(); i++) {
-            if (cliente.getNumAgencia() == agencias.get(i)) {
-                agencias.get(i).
-            }
+    public void alocarClienteGeralAgencia(Cliente cliente) {
+        for (int i = 0; i < clientes.size(); i++) {
+            cliente = clientes.get(i);
+            for (int j = 0; j < agencia.agencias.size(); j++) {
+                List<Agencia> listaAgencias = new ArrayList<>();
+                if (cliente.getNumAgencia() == agencia.agencias.get(j).getNumAgencia()){
+                    agencia.alocarClienteAgencia(cliente, listaAgencias);
+                }
             }
         }
+
+    
+
+    
 
     
 
