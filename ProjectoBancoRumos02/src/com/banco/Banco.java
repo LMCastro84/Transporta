@@ -61,6 +61,11 @@ public class Banco {
     public String getSaldoByIdString(int id) {
         return "Saldo do cliente numero : " + id + ": " + getSaldoById(id) + " Euros.";
     }
+    
+    public double getSaldoById (int id) {
+        double saldoCliente = 0;
+        return saldoCliente;
+    }
 
     public void criarCliente(Cliente cliente) {
         clientes.add(cliente);
