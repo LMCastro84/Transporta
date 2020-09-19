@@ -48,8 +48,8 @@ public class Banco {
         return moradaAgencia;
     }
 
-    public Cliente criarCliente() {
-        return null;
+    public void criarCliente(Cliente cliente) {
+        clientes.add(cliente);
     }
 
     public void eliminarCliente() {
