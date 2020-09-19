@@ -13,6 +13,7 @@ public class Banco {
 
     private int numAgencia;
     private String moradaAgencia;
+    public List<Agencia> agencias = new ArrayList<>();
     public List<Cliente> clientes = new ArrayList<>();
     
     Menu menu = new Menu();
