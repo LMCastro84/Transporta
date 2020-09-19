@@ -52,7 +52,13 @@ public class Banco {
         clientes.add(cliente);
     }
 
-    public void eliminarCliente() {
+    public void eliminarCliente(int numCliente) {
+        for(int i = 0; i < clientes.size() ; i++){
+            clientes.get(i);
+            if(numCliente == clientes.get(i).getNumAgencia()){
+                clientes.remove(i);
+            }
+        }
     }
 
     public ContaOrdem criaContaOrdem() {
