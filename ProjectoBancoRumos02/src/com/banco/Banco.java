@@ -55,31 +55,6 @@ public class Banco {
         return cliente;
     }
 
-    public String getSaldoByIdString(int id) {
-        return "Saldo do cliente numero : " + id + ": " + getSaldoById(id) + " Euros.";
-    }
-
-    public double getSaldoById(int id) {
-        double saldoCliente = 0;
-        return saldoCliente;
-    }
-
-    public String levantaSaldoClienteString(int id, double levantamento) {
-        subtraiSaldoCliente(id, levantamento);
-        return "Foram levantados " + levantamento + " Euros da conta do cliente numero "
-                + getClienteById(id).getNumCliente() + ". Novo saldo disponivel: " + getSaldoById(id) + " Euros.";
-    }
-
-    public void subtraiSaldoCliente(int id, double valor) {
-        double novoSaldo = getSaldoById(id) - valor;
-        getClienteById(id).setSaldo(novoSaldo);
-    }
-
-    public void adicionaSaldoCliente(int id, double valor) {
-        double novoSaldo = getSaldoById(id) + valor;
-        getClienteById(id).setSaldo(novoSaldo);
-    }
-
     public void adicionarCliente(Cliente cliente) {
         clientesGeral.add(cliente);
         alocarClienteGeralAgencia(cliente);
