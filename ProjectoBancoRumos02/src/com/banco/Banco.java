@@ -60,6 +60,10 @@ public class Banco {
             }
         }
     }
+    
+    public void updateClienteString(int id){
+        Cliente cliente = getClienteById(id);
+    }
 
     public ContaOrdem criaContaOrdem() {
         return null;
