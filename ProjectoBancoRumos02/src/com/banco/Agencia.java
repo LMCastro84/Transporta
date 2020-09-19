@@ -13,4 +13,7 @@ public class Agencia extends Banco {
         super(numAgencia, moradaAgencia, clientes);
     }
 
+    Banco agenciaPorto = new Agencia(1, "Avenida da Boavista", clientesPorto);
+    Banco agenciaLisboa = new Agencia(2, "Avenida da Liberdade", clientesLisboa);
+
 }
