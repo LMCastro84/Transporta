@@ -13,13 +13,9 @@ public class Banco {
 
     private int numAgencia;
     private String moradaAgencia;
-    public List<Agencia> agencias = new ArrayList<>();
     public List<Cliente> clientes = new ArrayList<>();
     public List<Cliente> clientesPorto = new ArrayList<>();
     public List<Cliente> clientesLisboa = new ArrayList<>();
-
-    Agencia agenciaPorto = new Agencia(1, "Avenida da Boavista", clientes);
-    Agencia agenciaLisboa = new Agencia(2, "Avenida da Liberdade", clientes);
 
     Menu menu = new Menu();
 
@@ -90,11 +86,13 @@ public class Banco {
 
     public void alocarClienteAgencia(Cliente cliente) {
         for (int i = 0; i < agencias.size(); i++) {
-            if (cliente.getNumAgencia() == agencias.get(i)){
+            if (cliente.getNumAgencia() == agencias.get(i)) {
                 agencias.get(i).
             }
+            }
         }
-    }
+
+    
 
     public void eliminarCliente(int numCliente) {
         for (int i = 0; i < clientes.size(); i++) {
