@@ -14,7 +14,8 @@ public class Main {
         agencia.agencias.add(agenciaLisboa);
         
         
-        banco.clientes.add(new ClienteNormal(1, 12565676, "Castro", "Foz-Porto", "Java Developer", "936960352", "luis.mbscastro@gmail.com", 1));
-        banco.clientes.add(new ClienteNormal(2, 12565676, "Dias e Castro", "Lisboa", "Bank", "968966418", "marisadiasecastro@gmail.com", 2));
+        banco.clientesGeral.add(new ClienteNormal(1, 12565676, "Castro", "Foz-Porto", "Java Developer", "936960352", "luis.mbscastro@gmail.com", 1));
+        banco.clientesGeral.add(new ClienteNormal(2, 12565676, "Dias e Castro", "Lisboa", "Bank", "968966418", "marisadiasecastro@gmail.com", 2));
+        
     }
 }
