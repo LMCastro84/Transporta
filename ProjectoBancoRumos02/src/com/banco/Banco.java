@@ -85,6 +85,15 @@ public class Banco {
 
     public void criarCliente(Cliente cliente) {
         clientes.add(cliente);
+        alocarClienteAgencia(cliente);
+    }
+
+    public void alocarClienteAgencia(Cliente cliente) {
+        for (int i = 0; i < agencias.size(); i++) {
+            if (cliente.getNumAgencia() == agencias.get(i)){
+                agencias.get(i).
+            }
+        }
     }
 
     public void eliminarCliente(int numCliente) {
