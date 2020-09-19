@@ -58,6 +58,10 @@ public class Banco {
         return cliente;
     }
 
+    public String getSaldoByIdString(int id) {
+        return "Saldo do cliente numero : " + id + ": " + getSaldoById(id) + " Euros.";
+    }
+
     public void criarCliente(Cliente cliente) {
         clientes.add(cliente);
     }
@@ -80,7 +84,7 @@ public class Banco {
             for (int i = 0; i < clientes.size(); i++) {
                 System.out.println("Lista clientes - teste");
             }
-        }else {
+        } else {
             System.out.println("De momento não existe nenhum cliente registado!");
         }
     }
