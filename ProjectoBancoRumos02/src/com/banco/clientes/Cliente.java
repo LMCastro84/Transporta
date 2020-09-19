@@ -13,8 +13,9 @@ public class Cliente {
     private String email;
     private int numAgencia;
 
-    public Cliente(){}
-    
+    public Cliente() {
+    }
+
     public Cliente(int numCliente, long numCidadao, String nome, String morada, String profissao, String telefone, String email, int numAgencia) {
         this.numCliente = numCliente;
         this.numCidadao = numCidadao;
@@ -25,6 +26,69 @@ public class Cliente {
         this.email = email;
         this.numAgencia = numAgencia;
     }
-    
-    
+
+    public void setNumCliente(int numCliente) {
+        this.numCliente = numCliente;
+    }
+
+    public void setNumCidadao(long numCidadao) {
+        this.numCidadao = numCidadao;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setMorada(String morada) {
+        this.morada = morada;
+    }
+
+    public void setProfissao(String profissao) {
+        this.profissao = profissao;
+    }
+
+    public void setTelefone(String telefone) {
+        this.telefone = telefone;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setNumAgencia(int numAgencia) {
+        this.numAgencia = numAgencia;
+    }
+
+    public int getNumCliente() {
+        return numCliente;
+    }
+
+    public long getNumCidadao() {
+        return numCidadao;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public String getMorada() {
+        return morada;
+    }
+
+    public String getProfissao() {
+        return profissao;
+    }
+
+    public String getTelefone() {
+        return telefone;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public int getNumAgencia() {
+        return numAgencia;
+    }
+
 }
