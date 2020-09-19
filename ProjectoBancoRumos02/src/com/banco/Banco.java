@@ -14,12 +14,16 @@ public class Banco {
     private int numAgencia;
     private String moradaAgencia;
     public List<Agencia> agencias = new ArrayList<>();
-    public List<Cliente> clientes = new ArrayList<>();
+    public List<Cliente> clientesPorto = new ArrayList<>();
+    public List<Cliente> clientesLisboa = new ArrayList<>();
     
+
+
     Menu menu = new Menu();
 
-    public Banco(){}
-    
+    public Banco() {
+    }
+
     public Banco(int numAgencia, String moradaAgencia, List<Cliente> clientes) {
         this.numAgencia = numAgencia;
         this.moradaAgencia = moradaAgencia;
@@ -41,29 +45,28 @@ public class Banco {
     public String getMoradaAgencia() {
         return moradaAgencia;
     }
-    
-    
-    
-    public Cliente criarCliente (){
+
+    public Cliente criarCliente() {
         return null;
     }
-    
-    public void eliminarCliente(){}
-    
-    public ContaOrdem criaContaOrdem(){
+
+    public void eliminarCliente() {
+    }
+
+    public ContaOrdem criaContaOrdem() {
         return null;
     }
-    
-    public ContaPrazo criaContaPrazo(){
+
+    public ContaPrazo criaContaPrazo() {
         return null;
     }
-    
-    public ContaPoupanca criaPoupanca(){
+
+    public ContaPoupanca criaPoupanca() {
         return null;
     }
-    
-    public ContaInvestimento criaContaInvestimento(){
+
+    public ContaInvestimento criaContaInvestimento() {
         return null;
     }
-    
+
 }
