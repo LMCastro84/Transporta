@@ -78,6 +78,11 @@ public class Banco {
         getClienteById(id).setSaldo(novoSaldo);
     }
 
+    public void adicionaSaldoCliente(int id, double valor) {
+        double novoSaldo = getSaldoById(id) + valor;
+        getClienteById(id).setSaldo(novoSaldo);
+    }
+
     public void criarCliente(Cliente cliente) {
         clientes.add(cliente);
     }
