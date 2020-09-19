@@ -13,9 +13,9 @@ public class Banco {
 
     private int numAgencia;
     private String moradaAgencia;
-    public List<Cliente> clientes = new ArrayList<>();
     public List<Cliente> clientesPorto = new ArrayList<>();
     public List<Cliente> clientesLisboa = new ArrayList<>();
+    public List<Cliente> clientesGeral = new ArrayList<>();
 
     Menu menu = new Menu();
     Agencia agencia = new Agencia();
@@ -23,10 +23,10 @@ public class Banco {
     public Banco() {
     }
 
-    public Banco(int numAgencia, String moradaAgencia, List<Cliente> clientes) {
+    public Banco(int numAgencia, String moradaAgencia, List<Cliente> clientesGeral) {
         this.numAgencia = numAgencia;
         this.moradaAgencia = moradaAgencia;
-        this.clientes = clientes;
+        this.clientesGeral = clientesGeral;
     }
 
     public void setNumAgencia(int numAgencia) {
@@ -47,9 +47,9 @@ public class Banco {
 
     public Cliente getClienteById(int id) {
         Cliente cliente = null;
-        for (int i = 0; i < clientes.size(); i++) {
-            if (id == clientes.get(i).getNumCliente()) {
-                cliente = clientes.get(i);
+        for (int i = 0; i < clientesGeral.size(); i++) {
+            if (id == clientesGeral.get(i).getNumCliente()) {
+                cliente = clientesGeral.get(i);
             }
         }
         return cliente;
@@ -81,32 +81,23 @@ public class Banco {
     }
 
     public void adicionarCliente(Cliente cliente) {
-        clientes.add(cliente);
+        clientesGeral.add(cliente);
         alocarClienteGeralAgencia(cliente);
     }
 
     public void alocarClienteGeralAgencia(Cliente cliente) {
-        for (int i = 0; i < clientes.size(); i++) {
-            cliente = clientes.get(i);
-            for (int j = 0; j < agencia.agencias.size(); j++) {
-                List<Agencia> listaAgencias = new ArrayList<>();
-                if (cliente.getNumAgencia() == agencia.agencias.get(j).getNumAgencia()){
-                    agencia.alocarClienteAgencia(cliente, listaAgencias);
-                }
-            }
+        if (cliente.getNumAgencia() == 1) {
+            clientesPorto.add(cliente);
+        } else {
+            clientesLisboa.add(cliente);
         }
-
-    
-
-    
-
-    
+    }
 
     public void eliminarCliente(int numCliente) {
-        for (int i = 0; i < clientes.size(); i++) {
-            clientes.get(i);
-            if (numCliente == clientes.get(i).getNumAgencia()) {
-                clientes.remove(i);
+        for (int i = 0; i < clientesGeral.size(); i++) {
+            clientesGeral.get(i);
+            if (numCliente == clientesGeral.get(i).getNumAgencia()) {
+                clientesGeral.remove(i);
             }
         }
     }
@@ -116,8 +107,8 @@ public class Banco {
     }
 
     public void listarClientes() {
-        if (clientes.size() >= 1) {
-            for (int i = 0; i < clientes.size(); i++) {
+        if (clientesGeral.size() >= 1) {
+            for (int i = 0; i < clientesGeral.size(); i++) {
                 System.out.println("Lista clientes - teste");
             }
         } else {
