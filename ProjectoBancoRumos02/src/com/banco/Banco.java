@@ -79,7 +79,7 @@ public class Banco {
         getClienteById(id).setSaldo(novoSaldo);
     }
 
-    public void criarCliente(Cliente cliente) {
+    public void adicionarCliente(Cliente cliente) {
         clientes.add(cliente);
         alocarClienteAgencia(cliente);
     }
