@@ -73,6 +73,11 @@ public class Banco {
                 + getClienteById(id).getNumCliente() + ". Novo saldo disponivel: " + getSaldoById(id) + " Euros.";
     }
 
+    public void subtraiSaldoCliente(int id, double valor) {
+        double novoSaldo = getSaldoById(id) - valor;
+        getClienteById(id).setSaldo(novoSaldo);
+    }
+
     public void criarCliente(Cliente cliente) {
         clientes.add(cliente);
     }
