@@ -1,9 +1,12 @@
 package com.banco.clientes;
 
+import com.banco.contas.Conta;
+import java.util.List;
+
 public class ClienteNormal extends Cliente {
 
-    public ClienteNormal(int numCliente, long numCidadao, String nome, String morada, String profissao, String telefone, String email, int numAgencia) {
-        super(numCliente, numCidadao, nome, morada, profissao, telefone, email, numAgencia);
+    public ClienteNormal(int numCliente, long numCidadao, String nome, String morada, String profissao, String telefone, String email, int numAgencia, List<Conta> contas) {
+        super(numCliente, numCidadao, nome, morada, profissao, telefone, email, numAgencia, contas);
     }
     
     
