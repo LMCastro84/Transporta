@@ -27,8 +27,6 @@ public class Cliente {
         this.numAgencia = numAgencia;
     }
 
-    Cliente clienteTeste = new ClienteNormal(1, 12565676, "Castro", "Foz-Porto", "Java Developer", "936960352", "luis.mbscastro@gmail.com", 1);
-    
     public void setNumCliente(int numCliente) {
         this.numCliente = numCliente;
     }
