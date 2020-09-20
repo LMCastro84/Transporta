@@ -2,6 +2,8 @@ package com.banco;
 
 import com.banco.clientes.Cliente;
 import com.banco.clientes.ClienteNormal;
+import com.banco.contas.Conta;
+import com.banco.contas.ContaOrdem;
 
 public class Main {
 
@@ -14,7 +16,8 @@ public class Main {
         agencia.agencias.add(agenciaPorto);
         agencia.agencias.add(agenciaLisboa);
 
-        Cliente cliente1 = new ClienteNormal(1, 12565676, "Castro", "Foz-Porto", "Java Developer", "936960352", "luis.mbscastro@gmail.com", 1);
+        Conta conta1 = new ContaOrdem(1, cliente1, 5000);
+        Cliente cliente1 = new ClienteNormal(1, 12565676, "Castro", "Foz-Porto", "Java Developer", "936960352", "luis.mbscastro@gmail.com", 1, conta1);
         banco.clientesGeral.add(cliente1);
         Cliente cliente2 = new ClienteNormal(2, 12565676, "Dias e Castro", "Lisboa", "Bank", "968966418", "marisadiasecastro@gmail.com", 2);
         banco.clientesGeral.add(cliente2);
@@ -24,5 +27,6 @@ public class Main {
         banco.listarClientesAgencia(banco.clientesPorto);
         banco.listarClientesAgencia(banco.clientesLisboa);
 
+        
     }
 }
