@@ -71,6 +71,10 @@ public class Cliente {
         return numCidadao;
     }
 
+    public void setContas(List<Conta> contas) {
+        this.contas = contas;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -93,6 +97,10 @@ public class Cliente {
 
     public int getNumAgencia() {
         return numAgencia;
+    }
+
+    public List<Conta> getContas() {
+        return contas;
     }
 
 }
