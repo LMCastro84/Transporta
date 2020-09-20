@@ -14,7 +14,7 @@ public class Cliente {
     private String telefone;
     private String email;
     private int numAgencia;
-    private List<Conta> contas;
+    public List<Conta> contas;
 
     public Cliente() {
     }
