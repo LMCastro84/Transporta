@@ -16,10 +16,13 @@ public class Main {
         agencia.agencias.add(agenciaPorto);
         agencia.agencias.add(agenciaLisboa);
 
-        Conta conta1 = new ContaOrdem(1, cliente1, 5000);
-        Cliente cliente1 = new ClienteNormal(1, 12565676, "Castro", "Foz-Porto", "Java Developer", "936960352", "luis.mbscastro@gmail.com", 1, conta1);
+        Cliente cliente1 = new ClienteNormal(1, 12565676, "Castro", "Foz-Porto", "Java Developer", "936960352", "luis.mbscastro@gmail.com", 1, null);
+        Conta conta1 = new ContaOrdem(1, 5000);
+        cliente1.contas.add(conta1);
         banco.clientesGeral.add(cliente1);
-        Cliente cliente2 = new ClienteNormal(2, 12565676, "Dias e Castro", "Lisboa", "Bank", "968966418", "marisadiasecastro@gmail.com", 2);
+        Cliente cliente2 = new ClienteNormal(2, 12565676, "Dias e Castro", "Lisboa", "Bank", "968966418", "marisadiasecastro@gmail.com", 2, null);
+        Conta conta2 = new ContaOrdem(2, 4900);
+        cliente2.contas.add(conta2);
         banco.clientesGeral.add(cliente2);
         banco.alocarClienteGeralAgencia(cliente1);
         banco.alocarClienteGeralAgencia(cliente2);
@@ -27,6 +30,5 @@ public class Main {
         banco.listarClientesAgencia(banco.clientesPorto);
         banco.listarClientesAgencia(banco.clientesLisboa);
 
-        
     }
 }
