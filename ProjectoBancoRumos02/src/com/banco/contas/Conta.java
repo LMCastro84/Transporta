@@ -1,11 +1,13 @@
 package com.banco.contas;
 
+import com.banco.clientes.Cliente;
 import com.banco.operacoes.Operacoes;
 
-public class Conta implements Operacoes{
+public class Conta implements Operacoes {
 
     private int numConta;
     private double saldo;
+    private Cliente cliente;
 
     public Conta(int numConta, double saldo) {
         this.numConta = numConta;
@@ -22,6 +24,14 @@ public class Conta implements Operacoes{
 
     public double getSaldo() {
         return saldo;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
     }
 
     @Override
@@ -43,6 +53,5 @@ public class Conta implements Operacoes{
     public void mostrarSaldo() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
-    
+
 }
