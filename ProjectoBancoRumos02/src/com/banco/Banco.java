@@ -18,7 +18,6 @@ public class Banco {
     public List<Cliente> clientesGeral = new ArrayList<>();
 
     Menu menu = new Menu();
-    Agencia agencia = new Agencia();
 
     public Banco() {
     }
@@ -81,13 +80,29 @@ public class Banco {
         Cliente cliente = getClienteById(id);
     }
 
-    public void listarClientes() {
+    public void listarClientesGeral() {
         if (clientesGeral.size() >= 1) {
             for (int i = 0; i < clientesGeral.size(); i++) {
-                System.out.println("Lista clientes - teste");
+                System.out.println("Cliente num " + clientesGeral.get(i).getNumCliente() + ", Nome: " + clientesGeral.get(i).getNome() + ".");
             }
         } else {
             System.out.println("De momento não existe nenhum cliente registado!");
+        }
+    }
+
+    public void listarClientesAgencia(List<Cliente> clientesAgencia) {
+        if (clientesAgencia == clientesPorto) {
+            for (int i = 0; i < clientesAgencia.size(); i++) {
+                System.out.println("Clientes da Agencia do Porto:");
+                System.out.println("Cliente num " + clientesAgencia.get(i).getNumCliente() + ", Nome: " + clientesAgencia.get(i).getNome()
+                        + " Agencia num " + clientesAgencia.get(i).getNumAgencia() + ".");
+            }
+        } else {
+            for (int i = 0; i < clientesAgencia.size(); i++) {
+                System.out.println("Clientes da Agencia de Lisboa:");
+                System.out.println("Cliente num " + clientesAgencia.get(i).getNumCliente() + ", Nome: " + clientesAgencia.get(i).getNome()
+                        + " Agencia num " + clientesAgencia.get(i).getNumAgencia() + ".");
+            }
         }
     }
 
