@@ -1,6 +1,8 @@
 package com.banco.clientes;
 
 import com.banco.Agencia;
+import com.banco.contas.Conta;
+import java.util.List;
 
 public class Cliente {
 
@@ -12,11 +14,12 @@ public class Cliente {
     private String telefone;
     private String email;
     private int numAgencia;
+    private List<Conta> contas;
 
     public Cliente() {
     }
 
-    public Cliente(int numCliente, long numCidadao, String nome, String morada, String profissao, String telefone, String email, int numAgencia) {
+    public Cliente(int numCliente, long numCidadao, String nome, String morada, String profissao, String telefone, String email, int numAgencia, List<Conta> contas) {
         this.numCliente = numCliente;
         this.numCidadao = numCidadao;
         this.nome = nome;
@@ -25,6 +28,7 @@ public class Cliente {
         this.telefone = telefone;
         this.email = email;
         this.numAgencia = numAgencia;
+        this.contas = contas;
     }
 
     public void setNumCliente(int numCliente) {
