@@ -9,9 +9,10 @@ public class Conta implements Operacoes {
     private double saldo;
     private Cliente cliente;
 
-    public Conta(int numConta, double saldo) {
+    public Conta(int numConta, double saldo, Cliente cliente) {
         this.numConta = numConta;
         this.saldo = saldo;
+        this.cliente = cliente;
     }
 
     public void setNumConta(int numConta) {
