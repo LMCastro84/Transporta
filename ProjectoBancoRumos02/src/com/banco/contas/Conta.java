@@ -7,11 +7,9 @@ public class Conta implements Operacoes {
 
     private int numConta;
     private double saldo;
-    private Cliente cliente;
 
     public Conta(int numConta, Cliente cliente, double saldo) {
         this.numConta = numConta;
-        this.cliente = cliente;
         this.saldo = saldo;
     }
 
@@ -25,14 +23,6 @@ public class Conta implements Operacoes {
 
     public double getSaldo() {
         return saldo;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
     }
 
     @Override
