@@ -56,19 +56,6 @@ public class Banco {
         return cliente;
     }
 
-    public void adicionarCliente(Cliente cliente) {
-        clientesGeral.add(cliente);
-        alocarClienteGeralAgencia(cliente);
-    }
-
-    public void alocarClienteGeralAgencia(Cliente cliente) {
-        if (cliente.getNumAgencia() == 1) {
-            clientesPorto.add(cliente);
-        } else {
-            clientesLisboa.add(cliente);
-        }
-    }
-
     public void eliminarCliente(int numCliente) {
         for (int i = 0; i < clientesGeral.size(); i++) {
             clientesGeral.get(i);
