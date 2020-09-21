@@ -103,4 +103,17 @@ public class Cliente {
         return contas;
     }
 
+    public void adicionarCliente(Cliente cliente) {
+        clientesGeral.add(cliente);
+        alocarClienteGeralAgencia(cliente);
+    }
+
+    public void alocarClienteGeralAgencia(Cliente cliente) {
+        if (cliente.getNumAgencia() == 1) {
+            clientesPorto.add(cliente);
+        } else {
+            clientesLisboa.add(cliente);
+        }
+    }
+
 }
