@@ -12,6 +12,7 @@ import java.util.List;
 
 public class Banco {
 
+    String nomeBanco = "BANCO JAVA";
     private int numAgencia;
     private String moradaAgencia;
     public List<Cliente> clientesPorto = new ArrayList<Cliente>();
@@ -28,6 +29,10 @@ public class Banco {
         this.numAgencia = numAgencia;
         this.moradaAgencia = moradaAgencia;
         this.clientesGeral = clientesGeral;
+    }
+
+    public String getNomeBanco() {
+        return nomeBanco;
     }
 
     public void setNumAgencia(int numAgencia) {
@@ -56,7 +61,17 @@ public class Banco {
         return cliente;
     }
 
-    public void eliminarCliente(int numCliente) {
+    public void adicionarCliente(Cliente c) {
+        clientesGeral.add(c);
+        if (c.getNumAgencia() == 1) {
+            clientesPorto.add(c);
+        } else {
+            clientesLisboa.add(c);
+        }
+    }
+}
+
+public void eliminarCliente(int numCliente) {
         for (int i = 0; i < clientesGeral.size(); i++) {
             clientesGeral.get(i);
             if (numCliente == clientesGeral.get(i).getNumAgencia()) {
