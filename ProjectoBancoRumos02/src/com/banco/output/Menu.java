@@ -62,7 +62,7 @@ public class Menu {
         return longUser;
     }
     
-    public static long lerLongMsg(Long msg){
+    public static long lerLongMsg(String msg){
         System.out.println(msg);
         return lerLong();
     }
