@@ -2,11 +2,13 @@ package com.banco.clientes;
 
 import com.banco.Agencia;
 import com.banco.contas.Conta;
+import com.banco.output.Menu;
 import java.util.List;
 
 public class Cliente {
 
     private int numCliente;
+    public static int contadorClientes = 0;
     private long numCidadao;
     private String nome;
     private String morada;
@@ -103,9 +105,17 @@ public class Cliente {
         return contas;
     }
 
-    public void adicionarCliente(Cliente cliente) {
-        clientesGeral.add(cliente);
-        alocarClienteGeralAgencia(cliente);
+    public static Cliente novoCliente() {
+        int numCliente = contadorClientes;
+        long numCidadao = Menu.lerLongMsg("Introduza numero de Cartao de Cidadao do Cliente num "+ numCliente+": ");
+        String nome = Menu.lerStringMsg("Introduza o(s) nome(s) do Cliente num "+ numCliente+": ");
+        String morada = Menu.lerStringMsg("Introduza a morada do Cliente num "+ numCliente+": ");
+        String profissao = Menu.lerStringMsg("Introduza a profissao: do Cliente num "+ numCliente+": ");
+        String telefone = Menu.lerStringMsg("Introduza o numero de telefone do Cliente num "+ numCliente+": ");
+        String email = Menu.lerStringMsg("Introduza endereco de email do Cliente num "+ numCliente+": ");
+        int numAgencia = Menu.lerIntMsg("Introduza o numero de Agencia: 1- Agencia Porto; 2- Agencia Lisboa: ");
+        List<Conta> contas = null;
+        return new Cliente(numCliente, numCidadao, nome, morada, profissao, telefone, email, numAgencia, contas);
     }
 
     public void alocarClienteGeralAgencia(Cliente cliente) {
