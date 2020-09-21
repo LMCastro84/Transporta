@@ -53,6 +53,19 @@ public class Menu {
         System.out.println(msg);
         return lerInt();
     }
+    
+    public static  long lerLong(){
+        String longTexto;
+        Scanner in = new Scanner(System.in);
+        longTexto = in.nextLine();
+        long longUser = Long.parseLong(longTexto);
+        return longUser;
+    }
+    
+    public static long lerLongMsg(Long msg){
+        System.out.println(msg);
+        return lerLong();
+    }
 
     public static double lerDouble() {
         String doubleTexto;
