@@ -1,6 +1,7 @@
 package com.banco;
 
 import com.banco.clientes.Cliente;
+import com.banco.contas.Conta;
 import com.banco.contas.ContaInvestimento;
 import com.banco.contas.ContaOrdem;
 import com.banco.contas.ContaPoupanca;
@@ -13,9 +14,10 @@ public class Banco {
 
     private int numAgencia;
     private String moradaAgencia;
-    public List<Cliente> clientesPorto = new ArrayList<>();
-    public List<Cliente> clientesLisboa = new ArrayList<>();
-    public List<Cliente> clientesGeral = new ArrayList<>();
+    public List<Cliente> clientesPorto = new ArrayList<Cliente>();
+    public List<Cliente> clientesLisboa = new ArrayList<Cliente>();
+    public List<Cliente> clientesGeral = new ArrayList<Cliente>();
+    public List<Conta> contas = new ArrayList<Conta>();
 
     Menu menu = new Menu();
 
