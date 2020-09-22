@@ -5,6 +5,7 @@ import com.banco.clientes.ClienteNormal;
 import com.banco.contas.Conta;
 import com.banco.contas.ContaOrdem;
 import com.banco.output.Menu;
+import java.util.List;
 
 public class Main {
 
@@ -16,6 +17,8 @@ public class Main {
         Agencia agenciaLisboa = new Agencia(2, "Avenida da Liberdade", banco.clientesLisboa);
         agencia.agencias.add(agenciaPorto);
         agencia.agencias.add(agenciaLisboa);
+
+        banco.clientesGeral.add(new Cliente(1, 654987654, "Castro", "Rua Andre", "Java Dev", "654987654", "asdçaij@asdlfj.com", 1, null));
 
         Menu.mainCabecalho();
 
@@ -65,7 +68,7 @@ public class Main {
                                 banco.listarClientesLisboa();
                                 break;
                             case 3:
-                                banco.listarClientesGlobal();
+                                banco.listarClientesGeral();
                                 break;
                             default:
                                 System.out.println("Introduziu um valor inv�lido. \n"
