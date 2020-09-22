@@ -49,8 +49,31 @@ public class Main {
                     } while (opcao != 2);
                     break;
                 case 2:
-                    System.out.println("LISTA DE CLIENTES EXISTENTES:");
-                    banco.listarClientes();
+                    do {
+                        System.out.println("LISTA DE CLIENTES EXISTENTES:");
+                        System.out.println("Introduza a Agencia/Geral: ");
+                        System.out.println("1- Agencia do Porto");
+                        System.out.println("2- Agencia de Lisboa");
+                        System.out.println("3- Lista global de Clientes");
+                        System.out.println("0- Retroceder");
+                        opcao = Menu.lerInt();
+                        switch (opcao) {
+                            case 1:
+                                banco.listarClientesPorto();
+                                break;
+                            case 2:
+                                banco.listarClientesLisboa();
+                                break;
+                            case 3:
+                                banco.listarClientesGlobal();
+                                break;
+                            default:
+                                System.out.println("Introduziu um valor inv�lido. \n"
+                                        + "Tente novamente.");
+                                System.out.println("-------------------------------------------");
+                                break;
+                        }
+                    } while (opcao != 0);
                     break;
                 case 3:
                     System.out.println("ACTUALIZAR DADOS DE CLIENTES");
