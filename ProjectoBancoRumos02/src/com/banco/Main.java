@@ -5,6 +5,7 @@ import com.banco.clientes.ClienteNormal;
 import com.banco.contas.Conta;
 import com.banco.contas.ContaOrdem;
 import com.banco.output.Menu;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Main {
@@ -17,8 +18,12 @@ public class Main {
         Agencia agenciaLisboa = new Agencia(2, "Avenida da Liberdade", banco.clientesLisboa);
         agencia.agencias.add(agenciaPorto);
         agencia.agencias.add(agenciaLisboa);
-
-        banco.clientesGeral.add(new Cliente(1, 654987654, "Castro", "Rua Andre", "Java Dev", "654987654", "asdçaij@asdlfj.com", 1, null));
+        List<Conta> contas = new ArrayList<>();
+        banco.clientesGeral.add(new Cliente(1, 654987654, "Castro", "Rua Andre", "Java Dev", "654987654", "asdçaij@asdlfj.com", 1, contas));
+        Conta contaOrdem = new ContaOrdem(1, 4500);
+        contas.add(contaOrdem);
+        System.out.println("Cliente " + banco.clientesGeral.get(0).getNome() + " Conta num " + contas.get(0).getNumConta() + " Saldo: " + contas.get(0).getSaldo() + "€.");
+        System.out.println(banco.clientesGeral.get(0).contas.get(0).getSaldo());
 
         Menu.mainCabecalho();
 
