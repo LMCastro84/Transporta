@@ -69,61 +69,61 @@ public class Banco {
             clientesLisboa.add(c);
         }
     }
-}
 
-public void eliminarCliente(int numCliente) {
-        for (int i = 0; i < clientesGeral.size(); i++) {
-            clientesGeral.get(i);
-            if (numCliente == clientesGeral.get(i).getNumAgencia()) {
-                clientesGeral.remove(i);
+    public void listarClientesPorto() {
+        for (int i = 0; i < clientesPorto.size(); i++) {
+            Cliente clt = clientesPorto.get(i);
+            System.out.println("Cliente num: " + clt.getNumCliente() + ", Nome: " + clt.getNome());
+            System.out.println("Contas: ");
+            for (int j = 0; j < clt.contas.size(); j++) {
+               Conta cnta = clt.contas.get(j);
+                System.out.println("Conta num "+cnta.getNumConta()+", Saldo: "
+                    +cnta.getSaldo()+"€.");
             }
+            System.out.println("- - -");
         }
     }
 
-    public void updateClienteString(int id) {
-        Cliente cliente = getClienteById(id);
-    }
-
-    public void listarClientesGeral() {
-        if (clientesGeral.size() >= 1) {
-            for (int i = 0; i < clientesGeral.size(); i++) {
-                System.out.println("Cliente num " + clientesGeral.get(i).getNumCliente() + ", Nome: " + clientesGeral.get(i).getNome() + ".");
-            }
-        } else {
-            System.out.println("De momento não existe nenhum cliente registado!");
-        }
-    }
-
-    public void listarClientesAgencia(List<Cliente> clientesAgencia) {
-        if (clientesAgencia == clientesPorto) {
-            for (int i = 0; i < clientesAgencia.size(); i++) {
-                System.out.println("Clientes da Agencia do Porto:");
-                System.out.println("Cliente num " + clientesAgencia.get(i).getNumCliente() + ", Nome: " + clientesAgencia.get(i).getNome()
-                        + " Agencia num " + clientesAgencia.get(i).getNumAgencia() + ".");
-            }
-        } else {
-            for (int i = 0; i < clientesAgencia.size(); i++) {
-                System.out.println("Clientes da Agencia de Lisboa:");
-                System.out.println("Cliente num " + clientesAgencia.get(i).getNumCliente() + ", Nome: " + clientesAgencia.get(i).getNome()
-                        + " Agencia num " + clientesAgencia.get(i).getNumAgencia() + ".");
-            }
-        }
-    }
-
-    public ContaOrdem criaContaOrdem() {
-        return null;
-    }
-
-    public ContaPrazo criaContaPrazo() {
-        return null;
-    }
-
-    public ContaPoupanca criaPoupanca() {
-        return null;
-    }
-
-    public ContaInvestimento criaContaInvestimento() {
-        return null;
-    }
-
+//public void eliminarCliente(int numCliente) {
+//        for (int i = 0; i < clientesGeral.size(); i++) {
+//            clientesGeral.get(i);
+//            if (numCliente == clientesGeral.get(i).getNumAgencia()) {
+//                clientesGeral.remove(i);
+//            }
+//        }
+//    }
+//    public void updateClienteString(int id) {
+//        Cliente cliente = getClienteById(id);
+//    }
+//
+//    public void listarClientesAgencia(List<Cliente> clientesAgencia) {
+//        if (clientesAgencia == clientesPorto) {
+//            for (int i = 0; i < clientesAgencia.size(); i++) {
+//                System.out.println("Clientes da Agencia do Porto:");
+//                System.out.println("Cliente num " + clientesAgencia.get(i).getNumCliente() + ", Nome: " + clientesAgencia.get(i).getNome()
+//                        + " Agencia num " + clientesAgencia.get(i).getNumAgencia() + ".");
+//            }
+//        } else {
+//            for (int i = 0; i < clientesAgencia.size(); i++) {
+//                System.out.println("Clientes da Agencia de Lisboa:");
+//                System.out.println("Cliente num " + clientesAgencia.get(i).getNumCliente() + ", Nome: " + clientesAgencia.get(i).getNome()
+//                        + " Agencia num " + clientesAgencia.get(i).getNumAgencia() + ".");
+//            }
+//        }
+//    }
+//    public ContaOrdem criaContaOrdem() {
+//        return null;
+//    }
+//
+//    public ContaPrazo criaContaPrazo() {
+//        return null;
+//    }
+//
+//    public ContaPoupanca criaPoupanca() {
+//        return null;
+//    }
+//
+//    public ContaInvestimento criaContaInvestimento() {
+//        return null;
+//    }
 }
