@@ -143,7 +143,11 @@ public class Cliente {
         String email = Menu.lerStringMsg("Introduza endereco de email do Cliente num " + numCliente + ": ");
         int numAgencia = Menu.lerIntMsg("Introduza o numero de Agencia: 1- Agencia Porto; 2- Agencia Lisboa: ");
         List<Conta> contas = new ArrayList<>();
+        Conta contaOrdem = Conta.novaContaOrdem();
+        contas.add(contaOrdem);
         List<Cartao> cartoes = new ArrayList<>();
+        Cartao cartaoDebito = Cartao.novoCartaoDebito();
+        cartoes.add(cartaoDebito);
         String gestorConta = Menu.lerStringMsg("Introduza o nome do Gestor da Conta do Cliente " + numCliente + ": ");
         return new ClienteVIP(numCliente, numCidadao, nome, morada, profissao, telefone, email, numAgencia, contas, cartoes, gestorConta);
     }
