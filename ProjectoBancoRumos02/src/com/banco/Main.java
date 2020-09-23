@@ -62,7 +62,7 @@ public class Main {
                         System.out.println("1- Agencia do Porto");
                         System.out.println("2- Agencia de Lisboa");
                         System.out.println("3- Lista global de Clientes");
-                        System.out.println("0- Retroceder");
+                        System.out.println("4- Retroceder");
                         opcao = Menu.lerInt();
                         switch (opcao) {
                             case 1:
@@ -74,7 +74,7 @@ public class Main {
                             case 3:
 //                                banco.listarClientesGeral();
                                 break;
-                            case 0:
+                            case 4:
                                 break;
                             default:
                                 System.out.println("Introduziu um valor inv�lido. \n"
@@ -82,7 +82,7 @@ public class Main {
                                 System.out.println("-------------------------------------------");
                                 break;
                         }
-                    } while (opcao != 0);
+                    } while (opcao != 4);
                     break;
                 case 3:
                     System.out.println("ACTUALIZAR DADOS DE CLIENTES");
