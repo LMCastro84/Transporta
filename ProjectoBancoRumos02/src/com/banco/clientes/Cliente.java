@@ -3,12 +3,13 @@ package com.banco.clientes;
 import com.banco.Agencia;
 import com.banco.contas.Conta;
 import com.banco.output.Menu;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cliente {
 
     private int numCliente;
-    public static int contadorClientes = 0;
+    public static int contadorClientes = 1;
     private long numCidadao;
     private String nome;
     private String morada;
@@ -114,7 +115,7 @@ public class Cliente {
         String telefone = Menu.lerStringMsg("Introduza o numero de telefone do Cliente num " + numCliente + ": ");
         String email = Menu.lerStringMsg("Introduza endereco de email do Cliente num " + numCliente + ": ");
         int numAgencia = Menu.lerIntMsg("Introduza o numero de Agencia: 1- Agencia Porto; 2- Agencia Lisboa: ");
-        List<Conta> contas = null;
+        List<Conta> contas = new ArrayList<>();
         return new ClienteNormal(numCliente, numCidadao, nome, morada, profissao, telefone, email, numAgencia, contas);
     }
 
