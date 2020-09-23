@@ -9,7 +9,7 @@ import java.util.List;
 public class Cliente {
 
     private int numCliente;
-    public static int contadorClientes = 1;
+    public static int contadorClientes = 0;
     private long numCidadao;
     private String nome;
     private String morada;
@@ -17,6 +17,8 @@ public class Cliente {
     private String telefone;
     private String email;
     private int numAgencia;
+    private int numCartao;
+    public static int contadorCartoes = 0;
     public List<Conta> contas;
 
     public Cliente() {
@@ -102,8 +104,12 @@ public class Cliente {
         return numAgencia;
     }
 
-    public List<Conta> getContas() {
-        return contas;
+    public int getNumCartao() {
+        return numCartao;
+    }
+
+    public void setNumCartao(int numCartao) {
+        this.numCartao = numCartao;
     }
 
     public static ClienteNormal novoClienteReg() {
