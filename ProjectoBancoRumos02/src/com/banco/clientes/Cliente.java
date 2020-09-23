@@ -1,7 +1,7 @@
 package com.banco.clientes;
 
 import com.banco.Agencia;
-import com.banco.cartoes.CartaoBancario;
+import com.banco.cartoes.Cartao;
 import com.banco.contas.Conta;
 import com.banco.output.Menu;
 import java.util.ArrayList;
@@ -21,12 +21,12 @@ public class Cliente {
     private int numCartao;
     public static int contadorCartoes = 0;
     public List<Conta> contas = new ArrayList<>();
-    public List<CartaoBancario> cartoes = new ArrayList<>();
+    public List<Cartao> cartoes = new ArrayList<>();
 
     public Cliente() {
     }
 
-    public Cliente(int numCliente, long numCidadao, String nome, String morada, String profissao, String telefone, String email, int numAgencia, List<Conta> contas, int numCartao) {
+    public Cliente(int numCliente, long numCidadao, String nome, String morada, String profissao, String telefone, String email, int numAgencia, List<Conta> contas, List<Cartao> cartoes) {
         this.numCliente = numCliente;
         this.numCidadao = numCidadao;
         this.nome = nome;
@@ -36,7 +36,7 @@ public class Cliente {
         this.email = email;
         this.numAgencia = numAgencia;
         this.contas = contas;
-        this.numCartao = numCartao;
+        this.cartoes = cartoes;
     }
 
     public void setNumCliente(int numCliente) {
@@ -115,7 +115,7 @@ public class Cliente {
         this.numCartao = numCartao;
     }
 
-    public static ClienteNormal novoClienteReg() {
+    public static Cliente novoClienteReg() {
         int numCliente = contadorClientes;
         long numCidadao = Menu.lerLongMsg("Introduza numero de Cartao de Cidadao do Cliente num " + numCliente + ": ");
         String nome = Menu.lerStringMsg("Introduza o(s) nome(s) do Cliente num " + numCliente + ": ");
@@ -125,7 +125,12 @@ public class Cliente {
         String email = Menu.lerStringMsg("Introduza endereco de email do Cliente num " + numCliente + ": ");
         int numAgencia = Menu.lerIntMsg("Introduza o numero de Agencia: 1- Agencia Porto; 2- Agencia Lisboa: ");
         List<Conta> contas = new ArrayList<>();
-        return new ClienteNormal(numCliente, numCidadao, nome, morada, profissao, telefone, email, numAgencia, contas);
+        Conta contaOrdem = Conta.novaContaOrdem();
+        contas.add(contaOrdem);
+        List<Cartao> cartoes = new ArrayList<>();
+        Cartao cartaoDebito = Cartao.novoCartaoDebito();
+        cartoes.add(cartaoDebito);
+        return new ClienteNormal(numCliente, numCidadao, nome, morada, profissao, telefone, email, numAgencia, contas, cartoes);
     }
 
     public static ClienteVIP novoClienteVIP() {
@@ -137,9 +142,10 @@ public class Cliente {
         String telefone = Menu.lerStringMsg("Introduza o numero de telefone do Cliente num " + numCliente + ": ");
         String email = Menu.lerStringMsg("Introduza endereco de email do Cliente num " + numCliente + ": ");
         int numAgencia = Menu.lerIntMsg("Introduza o numero de Agencia: 1- Agencia Porto; 2- Agencia Lisboa: ");
-        List<Conta> contas = null;
+        List<Conta> contas = new ArrayList<>();
+        List<Cartao> cartoes = new ArrayList<>();
         String gestorConta = Menu.lerStringMsg("Introduza o nome do Gestor da Conta do Cliente " + numCliente + ": ");
-        return new ClienteVIP(numCliente, numCidadao, nome, morada, profissao, telefone, email, numAgencia, contas, gestorConta);
+        return new ClienteVIP(numCliente, numCidadao, nome, morada, profissao, telefone, email, numAgencia, contas, cartoes, gestorConta);
     }
 
     public void alocarClienteGeralAgencia(Cliente cliente) {
