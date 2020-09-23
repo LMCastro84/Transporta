@@ -7,7 +7,7 @@ public class ClienteVIP extends Cliente {
 
     private String gestorConta;
 
-    public ClienteVIP(String gestorConta, int numCliente, long numCidadao, String nome, String morada, String profissao, String telefone, String email, int numAgencia, List<Conta> contas) {
+    public ClienteVIP(int numCliente, long numCidadao, String nome, String morada, String profissao, String telefone, String email, int numAgencia, List<Conta> contas, String gestorConta) {
         super(numCliente, numCidadao, nome, morada, profissao, telefone, email, numAgencia, contas);
         this.gestorConta = gestorConta;
     }
