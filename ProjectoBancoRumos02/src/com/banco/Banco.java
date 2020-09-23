@@ -89,7 +89,13 @@ public class Banco {
                 System.out.println("Conta num " + cnta.getNumConta() + ", Saldo: "
                         + cnta.getSaldo() + "€.");
             }
-            System.out.println("- - -");
+            System.out.println("Cartoes: ");
+            for (int j = 0; j < clt.cartoes.size(); j++) {
+                Cartao cartao = clt.cartoes.get(j);
+                System.out.println("Cartao num " + cartao.getNumCartao() + ".");
+            }
+            System.out.println("---------------//---------------");
+            System.out.println("");
         }
     }
 
@@ -109,13 +115,19 @@ public class Banco {
                 System.out.println("Conta num " + cnta.getNumConta() + ", Saldo: "
                         + cnta.getSaldo() + "€.");
             }
-            System.out.println("- - -");
+            System.out.println("Cartoes: ");
+            for (int j = 0; j < clt.cartoes.size(); j++) {
+                Cartao cartao = clt.cartoes.get(j);
+                System.out.println("Cartao num " + cartao.getNumCartao() + ".");
+            }
+            System.out.println("---------------//---------------");
+            System.out.println("");
         }
     }
 
     public void listarClientesGeral() {
         Cliente cltNormal = new ClienteNormal();
-        for (int i = 0; i< clientesGeral.size(); i++){
+        for (int i = 0; i < clientesGeral.size(); i++) {
             Cliente clt = clientesGeral.get(i);
             boolean isEqual = clt.getClass().equals(cltNormal.getClass());
             if (isEqual) {
@@ -129,7 +141,13 @@ public class Banco {
                 System.out.println("Conta num " + cnta.getNumConta() + ", Saldo: "
                         + cnta.getSaldo() + "€.");
             }
-            System.out.println("- - -");
+            System.out.println("Cartoes: ");
+            for (int j = 0; j < clt.cartoes.size(); j++) {
+                Cartao cartao = clt.cartoes.get(j);
+                System.out.println("Cartao num " + cartao.getNumCartao() + ".");
+            }
+            System.out.println("---------------//---------------");
+            System.out.println("");
         }
     }
 
