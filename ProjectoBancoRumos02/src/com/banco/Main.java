@@ -37,10 +37,12 @@ public class Main {
                         opcao = Menu.lerInt();
                         switch (opcao) {
                             case 1:
+                                Cliente.contadorClientes++;
                                 Cliente c = Cliente.novoClienteReg();
                                 banco.adicionarCliente(c);
                                 break;
                             case 2:
+                                Cliente.contadorClientes++;
                                 Cliente cVIP = Cliente.novoClienteVIP();
                                 banco.adicionarCliente(cVIP);
                             case 3:
