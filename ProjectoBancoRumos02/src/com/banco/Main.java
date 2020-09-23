@@ -10,14 +10,13 @@ import java.util.List;
 
 public class Main {
 
+    
     public static void main(String[] args) {
 
         Banco banco = new Banco();
-//        Agencia agencia = new Agencia();
-//        Agencia agenciaPorto = new Agencia(1, "Avenida da Boavista", banco.Banco.this.agenciaPorto);
-//        Agencia agenciaLisboa = new Agencia(2, "Avenida da Liberdade", banco.Banco.this.agenciaLisboa);
-//        agencia.agencias.add(agenciaPorto);
-//        agencia.agencias.add(agenciaLisboa);
+        Banco agenciaPorto = new Agencia(1, "Avenida da Boavista", banco.clientesAgenciaPorto);
+        Banco agenciaLisboa = new Agencia(2, "Avenida da Liberdade", banco.clientesAgenciaLisboa);
+
 
         Menu.mainCabecalho();
 
@@ -39,7 +38,7 @@ public class Main {
                             case 1:
                                 Cliente.contadorClientes++;
                                 Cliente c = Cliente.novoClienteReg();
-                                banco.adicionarCliente(c);
+                                banco.adicionarCliente(c);//descobrir a qual agencia pertence o cliente() + metodo para adicionar cliente consoante a agencia, usando as agencias das linhas 17 e 18
                                 break;
                             case 2:
                                 Cliente.contadorClientes++;
