@@ -6,12 +6,10 @@ import java.util.List;
 
 public class Agencia extends Banco {
 
-    public List<Agencia> agencias = new ArrayList<>();
-
     public Agencia() {
     }
 
-    public Agencia(int numAgencia, String moradaAgencia, List<Cliente> clientes) {
+    public Agencia(int numAgencia, String moradaAgencia, ArrayList<Cliente> clientes) {
         super(numAgencia, moradaAgencia, clientes);
     }
 
