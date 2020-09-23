@@ -7,7 +7,7 @@ import com.banco.output.Menu;
 public class Conta implements Operacoes {
 
     private int numConta;
-    public static int contadorContas = 0;
+    public static int contadorContas = 1000;
     private double saldo;
 
     public Conta() {
