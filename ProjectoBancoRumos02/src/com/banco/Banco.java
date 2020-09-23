@@ -113,6 +113,26 @@ public class Banco {
         }
     }
 
+    public void listarClientesGeral() {
+        Cliente cltNormal = new ClienteNormal();
+        for (int i = 0; i< clientesGeral.size(); i++){
+            Cliente clt = clientesGeral.get(i);
+            boolean isEqual = clt.getClass().equals(cltNormal.getClass());
+            if (isEqual) {
+                System.out.println("Cliente num: " + clt.getNumCliente() + ", Nome: " + clt.getNome());
+            } else {
+                System.out.println("Cliente VIP num: " + clt.getNumCliente() + ", Nome: " + clt.getNome());
+            }
+            System.out.println("Contas: ");
+            for (int j = 0; j < clt.contas.size(); j++) {
+                Conta cnta = clt.contas.get(j);
+                System.out.println("Conta num " + cnta.getNumConta() + ", Saldo: "
+                        + cnta.getSaldo() + "€.");
+            }
+            System.out.println("- - -");
+        }
+    }
+
 //public void eliminarCliente(int numCliente) {
 //        for (int i = 0; i < clientesGeral.size(); i++) {
 //            clientesGeral.get(i);
@@ -125,34 +145,4 @@ public class Banco {
 //        Cliente cliente = getClienteById(id);
 //    }
 //
-//    public void listarClientesAgencia(List<Cliente> clientesAgencia) {
-//        if (clientesAgencia == clientesAgenciaPorto) {
-//            for (int i = 0; i < clientesAgencia.size(); i++) {
-//                System.out.println("Clientes da Agencia do Porto:");
-//                System.out.println("Cliente num " + clientesAgencia.get(i).getNumCliente() + ", Nome: " + clientesAgencia.get(i).getNome()
-//                        + " Agencia num " + clientesAgencia.get(i).getNumAgencia() + ".");
-//            }
-//        } else {
-//            for (int i = 0; i < clientesAgencia.size(); i++) {
-//                System.out.println("Clientes da Agencia de Lisboa:");
-//                System.out.println("Cliente num " + clientesAgencia.get(i).getNumCliente() + ", Nome: " + clientesAgencia.get(i).getNome()
-//                        + " Agencia num " + clientesAgencia.get(i).getNumAgencia() + ".");
-//            }
-//        }
-//    }
-//    public ContaOrdem criaContaOrdem() {
-//        return null;
-//    }
-//
-//    public ContaPrazo criaContaPrazo() {
-//        return null;
-//    }
-//
-//    public ContaPoupanca criaPoupanca() {
-//        return null;
-//    }
-//
-//    public ContaInvestimento criaContaInvestimento() {
-//        return null;
-//    }
 }
