@@ -24,7 +24,7 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(int numCliente, long numCidadao, String nome, String morada, String profissao, String telefone, String email, int numAgencia, List<Conta> contas) {
+    public Cliente(int numCliente, long numCidadao, String nome, String morada, String profissao, String telefone, String email, int numAgencia, List<Conta> contas, int numCartao) {
         this.numCliente = numCliente;
         this.numCidadao = numCidadao;
         this.nome = nome;
@@ -34,6 +34,7 @@ public class Cliente {
         this.email = email;
         this.numAgencia = numAgencia;
         this.contas = contas;
+        this.numCartao = numCartao;
     }
 
     public void setNumCliente(int numCliente) {
