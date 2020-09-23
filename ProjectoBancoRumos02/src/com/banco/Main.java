@@ -41,7 +41,6 @@ public class Main {
                                 banco.adicionarCliente(c);
                                 break;
                             case 2:
-                                Cliente.contadorClientes++;
                                 Cliente cVIP = Cliente.novoClienteVIP();
                                 banco.adicionarCliente(cVIP);
                             case 3:
