@@ -116,7 +116,7 @@ public class Cliente {
     }
 
     public static Cliente novoClienteReg() {
-        int numCliente = contadorClientes++;
+        int numCliente = contadorClientes;
         long numCidadao = Menu.lerLongMsg("Introduza numero de Cartao de Cidadao do Cliente num " + numCliente + ": ");
         String nome = Menu.lerStringMsg("Introduza o(s) nome(s) do Cliente num " + numCliente + ": ");
         String morada = Menu.lerStringMsg("Introduza a morada do Cliente num " + numCliente + ": ");
@@ -134,7 +134,7 @@ public class Cliente {
     }
 
     public static ClienteVIP novoClienteVIP() {
-        int numCliente = contadorClientes++;
+        int numCliente = contadorClientes;
         long numCidadao = Menu.lerLongMsg("Introduza numero de Cartao de Cidadao do Cliente num " + numCliente + ": ");
         String nome = Menu.lerStringMsg("Introduza o(s) nome(s) do Cliente num " + numCliente + ": ");
         String morada = Menu.lerStringMsg("Introduza a morada do Cliente num " + numCliente + ": ");
