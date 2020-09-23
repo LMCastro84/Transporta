@@ -105,17 +105,31 @@ public class Cliente {
         return contas;
     }
 
-    public static Cliente novoCliente() {
+    public static ClienteNormal novoClienteReg() {
         int numCliente = contadorClientes;
-        long numCidadao = Menu.lerLongMsg("Introduza numero de Cartao de Cidadao do Cliente num "+ numCliente+": ");
-        String nome = Menu.lerStringMsg("Introduza o(s) nome(s) do Cliente num "+ numCliente+": ");
-        String morada = Menu.lerStringMsg("Introduza a morada do Cliente num "+ numCliente+": ");
-        String profissao = Menu.lerStringMsg("Introduza a profissao: do Cliente num "+ numCliente+": ");
-        String telefone = Menu.lerStringMsg("Introduza o numero de telefone do Cliente num "+ numCliente+": ");
-        String email = Menu.lerStringMsg("Introduza endereco de email do Cliente num "+ numCliente+": ");
+        long numCidadao = Menu.lerLongMsg("Introduza numero de Cartao de Cidadao do Cliente num " + numCliente + ": ");
+        String nome = Menu.lerStringMsg("Introduza o(s) nome(s) do Cliente num " + numCliente + ": ");
+        String morada = Menu.lerStringMsg("Introduza a morada do Cliente num " + numCliente + ": ");
+        String profissao = Menu.lerStringMsg("Introduza a profissao: do Cliente num " + numCliente + ": ");
+        String telefone = Menu.lerStringMsg("Introduza o numero de telefone do Cliente num " + numCliente + ": ");
+        String email = Menu.lerStringMsg("Introduza endereco de email do Cliente num " + numCliente + ": ");
         int numAgencia = Menu.lerIntMsg("Introduza o numero de Agencia: 1- Agencia Porto; 2- Agencia Lisboa: ");
         List<Conta> contas = null;
-        return new Cliente(numCliente, numCidadao, nome, morada, profissao, telefone, email, numAgencia, contas);
+        return new ClienteNormal(numCliente, numCidadao, nome, morada, profissao, telefone, email, numAgencia, contas);
+    }
+
+    public static ClienteVIP novoClienteVIP() {
+        int numCliente = contadorClientes;
+        long numCidadao = Menu.lerLongMsg("Introduza numero de Cartao de Cidadao do Cliente num " + numCliente + ": ");
+        String nome = Menu.lerStringMsg("Introduza o(s) nome(s) do Cliente num " + numCliente + ": ");
+        String morada = Menu.lerStringMsg("Introduza a morada do Cliente num " + numCliente + ": ");
+        String profissao = Menu.lerStringMsg("Introduza a profissao: do Cliente num " + numCliente + ": ");
+        String telefone = Menu.lerStringMsg("Introduza o numero de telefone do Cliente num " + numCliente + ": ");
+        String email = Menu.lerStringMsg("Introduza endereco de email do Cliente num " + numCliente + ": ");
+        int numAgencia = Menu.lerIntMsg("Introduza o numero de Agencia: 1- Agencia Porto; 2- Agencia Lisboa: ");
+        List<Conta> contas = null;
+        String gestorConta = Menu.lerStringMsg("Introduza o nome do Gestor da Conta do Cliente " + numCliente + ": ");
+        return new ClienteVIP(numCliente, numCidadao, nome, morada, profissao, telefone, email, numAgencia, contas, gestorConta);
     }
 
     public void alocarClienteGeralAgencia(Cliente cliente) {
