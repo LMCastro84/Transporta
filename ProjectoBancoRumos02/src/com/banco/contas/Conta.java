@@ -2,10 +2,12 @@ package com.banco.contas;
 
 import com.banco.clientes.Cliente;
 import com.banco.operacoes.Operacoes;
+import com.banco.output.Menu;
 
 public class Conta implements Operacoes {
 
     private int numConta;
+    public static int contadorContas = 0;
     private double saldo;
 
     public Conta() {
@@ -26,6 +28,12 @@ public class Conta implements Operacoes {
 
     public double getSaldo() {
         return saldo;
+    }
+
+    public static ContaOrdem novaContaOrdem() {
+        int numConta = contadorContas;
+        double saldo = Menu.lerDoubleMsg("Introduza o saldo para abrir a Conta a Ordem num "+numConta+": ");
+        return new ContaOrdem(numConta, saldo);
     }
 
     @Override
