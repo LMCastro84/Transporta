@@ -152,12 +152,4 @@ public class Cliente {
         return new ClienteVIP(numCliente, numCidadao, nome, morada, profissao, telefone, email, numAgencia, contas, cartoes, gestorConta);
     }
 
-    public void alocarClienteGeralAgencia(Cliente cliente) {
-        if (cliente.getNumAgencia() == 1) {
-            clientesPorto.add(cliente);
-        } else {
-            clientesLisboa.add(cliente);
-        }
-    }
-
 }
