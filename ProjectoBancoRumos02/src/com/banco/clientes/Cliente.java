@@ -1,6 +1,7 @@
 package com.banco.clientes;
 
 import com.banco.Agencia;
+import com.banco.cartoes.CartaoBancario;
 import com.banco.contas.Conta;
 import com.banco.output.Menu;
 import java.util.ArrayList;
@@ -19,7 +20,8 @@ public class Cliente {
     private int numAgencia;
     private int numCartao;
     public static int contadorCartoes = 0;
-    public List<Conta> contas;
+    public List<Conta> contas = new ArrayList<>();
+    public List<CartaoBancario> cartoes = new ArrayList<>();
 
     public Cliente() {
     }
