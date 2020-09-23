@@ -5,6 +5,7 @@ import com.banco.operacoes.Operacoes;
 public class CartaoBancario implements Operacoes {
 
     int numCartao;
+    public static int contadorCartoes = 0;
 
     public CartaoBancario(int numCartao) {
         this.numCartao = numCartao;
