@@ -1,10 +1,7 @@
 package com.banco.clientes;
 
 import com.banco.cartoes.CartaoBancario;
-import static com.banco.clientes.Cliente.contadorClientes;
 import com.banco.contas.Conta;
-import com.banco.output.Menu;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ClienteNormal extends Cliente {
