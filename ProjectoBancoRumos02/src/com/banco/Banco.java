@@ -78,16 +78,36 @@ public class Banco {
         for (int i = 0; i < clientesAgenciaPorto.size(); i++) {
             Cliente clt = clientesAgenciaPorto.get(i);
             boolean isEqual = clt.getClass().equals(cltNormal.getClass());
-            if (isEqual){
-            System.out.println("Cliente num: " + clt.getNumCliente() + ", Nome: " + clt.getNome());
-            }else{
-            System.out.println("Cliente VIP num: " + clt.getNumCliente() + ", Nome: " + clt.getNome());                
+            if (isEqual) {
+                System.out.println("Cliente num: " + clt.getNumCliente() + ", Nome: " + clt.getNome());
+            } else {
+                System.out.println("Cliente VIP num: " + clt.getNumCliente() + ", Nome: " + clt.getNome());
             }
             System.out.println("Contas: ");
             for (int j = 0; j < clt.contas.size(); j++) {
-               Conta cnta = clt.contas.get(j);
-                System.out.println("Conta num "+cnta.getNumConta()+", Saldo: "
-                    +cnta.getSaldo()+"€.");
+                Conta cnta = clt.contas.get(j);
+                System.out.println("Conta num " + cnta.getNumConta() + ", Saldo: "
+                        + cnta.getSaldo() + "€.");
+            }
+            System.out.println("- - -");
+        }
+    }
+
+    public void listarClientesLisboa() {
+        Cliente cltNormal = new ClienteNormal();
+        for (int i = 0; i < clientesAgenciaLisboa.size(); i++) {
+            Cliente clt = clientesAgenciaLisboa.get(i);
+            boolean isEqual = clt.getClass().equals(cltNormal.getClass());
+            if (isEqual) {
+                System.out.println("Cliente num: " + clt.getNumCliente() + ", Nome: " + clt.getNome());
+            } else {
+                System.out.println("Cliente VIP num: " + clt.getNumCliente() + ", Nome: " + clt.getNome());
+            }
+            System.out.println("Contas: ");
+            for (int j = 0; j < clt.contas.size(); j++) {
+                Conta cnta = clt.contas.get(j);
+                System.out.println("Conta num " + cnta.getNumConta() + ", Saldo: "
+                        + cnta.getSaldo() + "€.");
             }
             System.out.println("- - -");
         }
