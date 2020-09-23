@@ -1,5 +1,6 @@
 package com.banco;
 
+import com.banco.cartoes.Cartao;
 import com.banco.clientes.Cliente;
 import com.banco.contas.Conta;
 import com.banco.contas.ContaInvestimento;
@@ -15,10 +16,11 @@ public class Banco {
     String nomeBanco = "BANCO JAVA";
     private int numAgencia;
     private String moradaAgencia;
-    public List<Cliente> clientesPorto = new ArrayList<Cliente>();
-    public List<Cliente> clientesLisboa = new ArrayList<Cliente>();
+    public List<Cliente> clientesAgenciaPorto = new ArrayList<Cliente>();
+    public List<Cliente> clientesAgenciaLisboa = new ArrayList<Cliente>();
     public List<Cliente> clientesGeral = new ArrayList<Cliente>();
     public List<Conta> contas = new ArrayList<Conta>();
+    public List<Cartao> cartoes = new ArrayList<>();
 
     Menu menu = new Menu();
 
@@ -61,18 +63,18 @@ public class Banco {
         return cliente;
     }
 
-    public void adicionarCliente(Cliente c) {
-        clientesGeral.add(c);
-        if (c.getNumAgencia() == 1) {
-            clientesPorto.add(c);
+    public void adicionarCliente(Cliente clt) {
+        clientesGeral.add(clt);
+        if (clt.getNumAgencia() == 1) {
+            clientesAgenciaPorto.add(clt);
         } else {
-            clientesLisboa.add(c);
+            clientesAgenciaLisboa.add(clt);
         }
     }
 
     public void listarClientesPorto() {
-        for (int i = 0; i < clientesPorto.size(); i++) {
-            Cliente clt = clientesPorto.get(i);
+        for (int i = 0; i < clientesAgenciaPorto.size(); i++) {
+            Cliente clt = clientesAgenciaPorto.get(i);
             System.out.println("Cliente num: " + clt.getNumCliente() + ", Nome: " + clt.getNome());
             System.out.println("Contas: ");
             for (int j = 0; j < clt.contas.size(); j++) {
@@ -97,7 +99,7 @@ public class Banco {
 //    }
 //
 //    public void listarClientesAgencia(List<Cliente> clientesAgencia) {
-//        if (clientesAgencia == clientesPorto) {
+//        if (clientesAgencia == clientesAgenciaPorto) {
 //            for (int i = 0; i < clientesAgencia.size(); i++) {
 //                System.out.println("Clientes da Agencia do Porto:");
 //                System.out.println("Cliente num " + clientesAgencia.get(i).getNumCliente() + ", Nome: " + clientesAgencia.get(i).getNome()
