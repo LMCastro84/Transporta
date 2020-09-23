@@ -70,10 +70,10 @@ public class Main {
                                 banco.listarClientesPorto();
                                 break;
                             case 2:
-                                banco.listarClientesLisboa();
+//                                banco.listarClientesLisboa();
                                 break;
                             case 3:
-                                banco.listarClientesGeral();
+//                                banco.listarClientesGeral();
                                 break;
                             default:
                                 System.out.println("Introduziu um valor inv�lido. \n"
@@ -87,12 +87,12 @@ public class Main {
                     System.out.println("ACTUALIZAR DADOS DE CLIENTES");
 //                    banco.updateCliente(Cliente.updateCliente(Menu.lerIntMsg("Por favor, introduza o n�mero de Cliente para actualizar: ")));
                     System.out.println("Por favor, introduza o numero de Cliente a actualizar: ");
-                    id = Menu.lerInt();
-                    banco.updateClienteString(id);
+                    int id = Menu.lerInt();
+//                    banco.updateClienteString(id);
                     break;
                 case 4:
                     System.out.println("ELIMINAR CLIENTES:");
-                    banco.removerCliente(Menu.lerIntMsg("Por favor, introduza o n�mero de Cliente a ser eliminado: "));
+//                    banco.removerCliente(Menu.lerIntMsg("Por favor, introduza o n�mero de Cliente a ser eliminado: "));
                     break;
                 case 5:
                     do {
@@ -108,7 +108,7 @@ public class Main {
                                 System.out.println("CONSULTA DE SALDOS");
                                 System.out.println("Consultar Saldo do Cliente n�mero: ");
                                 id = Menu.lerInt();
-                                System.out.println(banco.getSaldoByIdString(id));
+//                                System.out.println(banco.getSaldoByIdString(id));
 //                            Menu.lerIntMsg(null); //entrar no cliente atraves do seu n.�, e obter o seu saldo
                                 break;
                             case 2:
@@ -117,7 +117,7 @@ public class Main {
                                 id = Menu.lerInt();
                                 System.out.println("Numerario a ser levantado: ");
                                 double levantamento = Menu.lerDouble();
-                                System.out.println(banco.levantaSaldoClienteString(id, levantamento));
+//                                System.out.println(banco.levantaSaldoClienteString(id, levantamento));
                                 break;
                             case 3:
                                 System.out.println("TRANSFER�NCIAS");
@@ -127,7 +127,7 @@ public class Main {
                                 double transferencia = Menu.lerDouble();
                                 System.out.println("N�mero de Conta de Destino: ");
                                 int idDestino = Menu.lerInt();
-                                System.out.println(banco.transfereSaldoString(idOrigem, transferencia, idDestino));
+//                                System.out.println(banco.transfereSaldoString(idOrigem, transferencia, idDestino));
                                 break;
                             case 4:
                                 Menu.mainMenu();
