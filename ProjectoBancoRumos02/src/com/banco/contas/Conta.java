@@ -30,7 +30,8 @@ public class Conta implements Operacoes {
         return saldo;
     }
 
-    public static ContaOrdem novaContaOrdem() {
+    public static Conta novaContaOrdem() {
+        contadorContas++;
         int numConta = contadorContas;
         double saldo = Menu.lerDoubleMsg("Introduza o saldo para abrir a Conta a Ordem num "+numConta+": ");
         return new ContaOrdem(numConta, saldo);
