@@ -46,6 +46,9 @@ public class Main {
                                 Cliente.contadorClientes++;
                                 Cliente c = Cliente.novoClienteReg();
                                 banco.adicionarCliente(c);
+                                Conta.contadorContas++;
+                                ContaOrdem cOrdem = Conta.novaContaOrdem();
+                                c.contas.add(cOrdem);
                                 break;
                             case 2:
                                 Cliente.contadorClientes++;
