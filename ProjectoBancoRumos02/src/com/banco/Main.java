@@ -19,11 +19,11 @@ public class Main {
         agencia.agencias.add(agenciaPorto);
         agencia.agencias.add(agenciaLisboa);
         List<Conta> contas = new ArrayList<>();
-        banco.clientesGeral.add(new Cliente(1, 654987654, "Castro", "Rua Andre", "Java Dev", "654987654", "asdçaij@asdlfj.com", 1, contas));
+        banco.clientesPorto.add(new Cliente(1, 654987654, "Castro", "Rua Andre", "Java Dev", "654987654", "asdçaij@asdlfj.com", 1, contas));
         Conta contaOrdem = new ContaOrdem(1, 4500);
         contas.add(contaOrdem);
-        System.out.println("Cliente " + banco.clientesGeral.get(0).getNome() + " Conta num " + contas.get(0).getNumConta() + " Saldo: " + contas.get(0).getSaldo() + "€.");
-        System.out.println(banco.clientesGeral.get(0).contas.get(0).getSaldo());
+//        System.out.println("Cliente " + banco.clientesPorto.get(0).getNome() + " Conta num " + contas.get(0).getNumConta() + " Saldo: " + contas.get(0).getSaldo() + "€.");
+        System.out.println(banco.clientesPorto.get(0).contas.get(0).getSaldo());
 
         Menu.mainCabecalho();
 
@@ -37,17 +37,21 @@ public class Main {
                     do {
                         System.out.println("NOVO CLIENTE:");
                         System.out.println("Introduza o tipo de Cliente a criar:");
-                        System.out.println("1- regular");
-                        System.out.println("2- Retroceder");
+                        System.out.println("1- Regular");
+                        System.out.println("2- VIP");
+                        System.out.println("3- Retroceder");
                         opcao = Menu.lerInt();
                         switch (opcao) {
                             case 1:
                                 Cliente.contadorClientes++;
-                                Cliente c = Cliente.novoCliente();
+                                Cliente c = Cliente.novoClienteReg();
                                 banco.adicionarCliente(c);
                                 break;
                             case 2:
-                                Menu.mainMenu();
+                                Cliente.contadorClientes++;
+                                
+                            case 3:
+                                break;
                             default:
                                 System.out.println("Introduziu um valor inv�lido. \n"
                                         + "Tente novamente.");
