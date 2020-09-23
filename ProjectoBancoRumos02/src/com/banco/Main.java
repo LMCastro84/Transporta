@@ -69,7 +69,7 @@ public class Main {
                                 banco.listarClientesPorto();
                                 break;
                             case 2:
-//                                banco.listarClientesLisboa();
+                                banco.listarClientesLisboa();
                                 break;
                             case 3:
 //                                banco.listarClientesGeral();
