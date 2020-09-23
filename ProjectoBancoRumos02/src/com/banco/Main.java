@@ -49,8 +49,8 @@ public class Main {
                                 break;
                             case 2:
                                 Cliente.contadorClientes++;
-                                Cliente c = Cliente.novoClienteVIP();
-                                banco.adicionarCliente(c);
+                                Cliente cVIP = Cliente.novoClienteVIP();
+                                banco.adicionarCliente(cVIP);
                             case 3:
                                 break;
                             default:
