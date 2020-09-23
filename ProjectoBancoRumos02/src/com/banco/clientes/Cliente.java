@@ -10,7 +10,7 @@ import java.util.List;
 public class Cliente {
 
     private int numCliente;
-    public static int contadorClientes = 0;
+    public static int contadorClientes = 100;
     private long numCidadao;
     private String nome;
     private String morada;
