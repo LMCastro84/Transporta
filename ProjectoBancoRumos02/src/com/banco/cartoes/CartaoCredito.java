@@ -1,6 +1,6 @@
 package com.banco.cartoes;
 
-public class CartaoCredito extends CartaoBancario {
+public class CartaoCredito extends Cartao {
 
     private double plafond;
 
