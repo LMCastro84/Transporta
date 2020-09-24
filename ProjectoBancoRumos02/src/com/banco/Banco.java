@@ -64,7 +64,6 @@ public class Banco {
         clientesGeral.add(clt);
         if (clt.getNumAgencia() == 1) {
 
-//            clientesAgenciaPorto.add(clt);
         } else {
             clientesAgenciaLisboa.add(clt);
         }
