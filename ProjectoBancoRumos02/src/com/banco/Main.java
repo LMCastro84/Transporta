@@ -14,8 +14,8 @@ public class Main {
     public static void main(String[] args) {
 
         Banco banco = new Banco();
-        Banco agenciaPorto = new Agencia(1, "Avenida da Boavista", banco.clientesAgenciaPorto);
-        Banco agenciaLisboa = new Agencia(2, "Avenida da Liberdade", banco.clientesAgenciaLisboa);
+        Banco agenciaPorto = new Agencia(1, "Avenida da Boavista", (ArrayList<Cliente>) banco.clientesAgenciaPorto);
+        Banco agenciaLisboa = new Agencia(2, "Avenida da Liberdade", (ArrayList<Cliente>) banco.clientesAgenciaLisboa);
 
 
         Menu.mainCabecalho();
