@@ -4,10 +4,6 @@ import com.banco.cartoes.Cartao;
 import com.banco.clientes.Cliente;
 import com.banco.clientes.ClienteNormal;
 import com.banco.contas.Conta;
-import com.banco.contas.ContaInvestimento;
-import com.banco.contas.ContaOrdem;
-import com.banco.contas.ContaPoupanca;
-import com.banco.contas.ContaPrazo;
 import com.banco.output.Menu;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,7 +24,7 @@ public class Banco {
     public Banco() {
     }
 
-    public Banco(int numAgencia, String moradaAgencia, List<Cliente> clientesGeral) {
+    public Banco(int numAgencia, String moradaAgencia, ArrayList<Cliente> clientesGeral) {
         this.numAgencia = numAgencia;
         this.moradaAgencia = moradaAgencia;
         this.clientesGeral = clientesGeral;
@@ -67,7 +63,7 @@ public class Banco {
     public void adicionarCliente(Cliente clt) {
         clientesGeral.add(clt);
         if (clt.getNumAgencia() == 1) {
-            
+
 //            clientesAgenciaPorto.add(clt);
         } else {
             clientesAgenciaLisboa.add(clt);
