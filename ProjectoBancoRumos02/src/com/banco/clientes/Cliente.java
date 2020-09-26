@@ -151,5 +151,9 @@ public class Cliente {
         String gestorConta = Menu.lerStringMsg("Introduza o nome do Gestor da Conta do Cliente " + numCliente + ": ");
         return new ClienteVIP(numCliente, numCidadao, nome, morada, profissao, telefone, email, numAgencia, contas, cartoes, gestorConta);
     }
+    
+    public static Cliente updateCliente() {
+        return null;
+    }
 
 }
