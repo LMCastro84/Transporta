@@ -4,6 +4,7 @@ import com.banco.Banco;
 import java.util.Scanner;
 
 public class Menu {
+
     public static void mainCabecalho() {
         Banco b = new Banco();
         System.out.println("*******************************************");
@@ -17,14 +18,14 @@ public class Menu {
     public static void mainMenu() {
         System.out.println("___________________________________________");
         System.out.println("-------------------------------------------");
-        System.out.println("|            Escolha uma op��o:           |");
+        System.out.println("|            Escolha uma opcao:           |");
         System.out.println("-------------------------------------------");
         System.out.println("1-              Novo Cliente               ");
         System.out.println("2-      Lista de Clientes existentes       ");
         System.out.println("3-      Actualizar dados de Clientes       ");
         System.out.println("4-           Eliminar Clientes             ");
-        System.out.println("5-          Transa��es/Consultas           ");
-        System.out.println("0-                   Sair                  ");
+        System.out.println("5-          Transacoes/Consultas           ");
+        System.out.println("6-                   Sair                  ");
         System.out.println("-------------------------------------------");
         System.out.println("___________________________________________");
     }
@@ -44,25 +45,32 @@ public class Menu {
     public static int lerInt() {
         String intTexto;
         Scanner in = new Scanner(System.in);
-        intTexto = in.nextLine();
-        int intUser = Integer.parseInt(intTexto);
-        return intUser;
+        int intUser = 0;
+        do {
+            intTexto = in.nextLine();
+            try {
+                intUser = Integer.parseInt(intTexto);
+            } catch (NumberFormatException nFE) {
+                System.out.println(intTexto+ " nao e um valor numerico.");
+            }
+            return intUser;
+        } while (!in.hasNextInt());
     }
 
     public static int lerIntMsg(String msg) {
         System.out.println(msg);
         return lerInt();
     }
-    
-    public static  long lerLong(){
+
+    public static long lerLong() {
         String longTexto;
         Scanner in = new Scanner(System.in);
         longTexto = in.nextLine();
         long longUser = Long.parseLong(longTexto);
         return longUser;
     }
-    
-    public static long lerLongMsg(String msg){
+
+    public static long lerLongMsg(String msg) {
         System.out.println(msg);
         return lerLong();
     }
