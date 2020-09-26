@@ -62,7 +62,7 @@ public class Main {
                         System.out.println("2- Agencia de Lisboa");
                         System.out.println("3- Lista global de Clientes");
                         System.out.println("4- Retroceder");
-                        opcao = Menu.lerInt();
+                        opcao = Menu.lerString();
                         switch (opcao) {
                             case "1":
                                 banco.listarClientesPorto();
