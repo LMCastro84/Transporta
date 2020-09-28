@@ -4,6 +4,7 @@ import com.banco.cartoes.Cartao;
 import com.banco.clientes.Cliente;
 import com.banco.clientes.ClienteNormal;
 import com.banco.contas.Conta;
+import com.banco.exceptions.ClienteInexistente;
 import com.banco.output.Menu;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,7 +16,7 @@ public class Banco {
     private String moradaAgencia;
     public List<Cliente> clientesAgenciaPorto = new ArrayList<Cliente>();
     public List<Cliente> clientesAgenciaLisboa = new ArrayList<Cliente>();
-    public List<Cliente> clientesGeral = new ArrayList<Cliente>();
+    public static List<Cliente> clientesGeral = new ArrayList<Cliente>();
     public List<Conta> contas = new ArrayList<Conta>();
     public List<Cartao> cartoes = new ArrayList<>();
 
@@ -50,13 +51,17 @@ public class Banco {
         return moradaAgencia;
     }
 
-    public Cliente getClienteById(int id) {
+    public static Cliente getClienteById(int id) throws ClienteInexistente{
         Cliente cliente = null;
-        for (int i = 0; i < clientesGeral.size(); i++) {
-            if (id == clientesGeral.get(i).getNumCliente()) {
-                cliente = clientesGeral.get(i);
+        do {
+            for (int i = 0; i < clientesGeral.size(); i++) {
+                if (id == clientesGeral.get(i).getNumCliente()) {
+                    cliente = clientesGeral.get(i);
+                } else {
+                    throw new ClienteInexistente(); //??? Testar
+                }
             }
-        }
+        } while (cliente == null);
         return cliente;
     }
 
