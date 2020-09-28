@@ -82,11 +82,13 @@ public class Main {
                     } while (opcao != 4);
                     break;
                 case 3:
+                    int numCliente = 0;
                     System.out.println("ACTUALIZAR DADOS DE CLIENTES");
-//                    banco.updateCliente(Cliente.updateCliente(Menu.lerIntMsg("Por favor, introduza o n�mero de Cliente para actualizar: ")));
-                    System.out.println("Por favor, introduza o numero de Cliente a actualizar: ");
-                    int id = Menu.lerInt();
-//                    banco.updateClienteString(id);
+                    do {
+                        System.out.println("Por favor, introduza o numero de Cliente a actualizar: ");
+                        numCliente = Menu.lerInt();
+                        Cliente.updateClienteRegular(numCliente);
+                    } while (!(Banco.clientesGeral.contains(Banco.clientesGeral.get(numCliente))));
                     break;
                 case 4:
                     System.out.println("ELIMINAR CLIENTES:");
@@ -152,6 +154,7 @@ public class Main {
                     System.out.println("===========================================");
                     break;
             }
+
         } while (opcao != 6);
 
 //        banco.clientesGeral.add(new ClienteNormal(1, 12565676, "Castro", "Foz-Porto", "Java Developer", "936960352", "luis.mbscastro@gmail.com", 1, null));
@@ -171,4 +174,5 @@ public class Main {
 //        banco.listarClientesAgencia(banco.agenciaPorto);
 //        banco.listarClientesAgencia(banco.agenciaLisboa);
     }
+
 }
