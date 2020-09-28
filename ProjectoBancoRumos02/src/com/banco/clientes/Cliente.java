@@ -1,6 +1,7 @@
 package com.banco.clientes;
 
 import com.banco.Agencia;
+import com.banco.Banco;
 import com.banco.cartoes.Cartao;
 import com.banco.contas.Conta;
 import com.banco.output.Menu;
@@ -22,6 +23,7 @@ public class Cliente {
     public static int contadorCartoes = 0;
     public List<Conta> contas = new ArrayList<>();
     public List<Cartao> cartoes = new ArrayList<>();
+    public Banco banco = new Banco();
 
     public Cliente() {
     }
@@ -151,9 +153,21 @@ public class Cliente {
         String gestorConta = Menu.lerStringMsg("Introduza o nome do Gestor da Conta do Cliente " + numCliente + ": ");
         return new ClienteVIP(numCliente, numCidadao, nome, morada, profissao, telefone, email, numAgencia, contas, cartoes, gestorConta);
     }
-    
-    public static Cliente updateCliente() {
-        return null;
+
+    public static void updateClienteRegular(int numCliente) {
+        Cliente clienteRegUpdate;
+        clienteRegUpdate = Banco.getClienteById(numCliente);
+
+            for (int i = 0; i < Banco.clientesGeral.size(); i++) {
+                if (numCliente == Banco.clientesGeral.get(i).getNumCartao()) {
+                    clienteRegUpdate = Banco.clientesGeral.get(i);
+                    clienteRegUpdate.setNome(Menu.lerStringMsg("Introduza o(s) nome(s) do Cliente num " + numCliente + ": "));
+                    clienteRegUpdate.setMorada(Menu.lerStringMsg("Introduza a morada do Cliente num " + numCliente + ": "));
+                    clienteRegUpdate.setProfissao(Menu.lerStringMsg("Introduza a profissao: do Cliente num " + numCliente + ": "));
+                    clienteRegUpdate.setTelefone(Menu.lerStringMsg("Introduza o numero de telefone do Cliente num " + numCliente + ": "));
+                    clienteRegUpdate.setEmail(Menu.lerStringMsg("Introduza endereco de email do Cliente num " + numCliente + ": "));
+                }
+            }
     }
 
 }
