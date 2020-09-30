@@ -2,6 +2,7 @@ package com.banco.clientes;
 
 import com.banco.cartoes.Cartao;
 import com.banco.contas.Conta;
+import com.banco.output.Menu;
 import java.util.List;
 
 public class ClienteNormal extends Cliente {
