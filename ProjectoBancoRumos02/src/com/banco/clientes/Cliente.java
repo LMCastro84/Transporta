@@ -23,6 +23,7 @@ public class Cliente {
     public static int contadorCartoes = 0;
     public List<Conta> contas = new ArrayList<>();
     public List<Cartao> cartoes = new ArrayList<>();
+    private String gestorConta;
     public Banco banco = new Banco();
 
     public Cliente() {
@@ -39,6 +40,20 @@ public class Cliente {
         this.numAgencia = numAgencia;
         this.contas = contas;
         this.cartoes = cartoes;
+    }
+
+    public Cliente(int numCliente, long numCidadao, String nome, String morada, String profissao, String telefone, String email, int numAgencia, List<Conta> contas, List<Cartao> cartoes, String gestorConta) {
+        this.numCliente = numCliente;
+        this.numCidadao = numCidadao;
+        this.nome = nome;
+        this.morada = morada;
+        this.profissao = profissao;
+        this.telefone = telefone;
+        this.email = email;
+        this.numAgencia = numAgencia;
+        this.contas = contas;
+        this.cartoes = cartoes;
+        this.gestorConta = gestorConta;
     }
 
     public void setNumCliente(int numCliente) {
@@ -85,6 +100,10 @@ public class Cliente {
         this.contas = contas;
     }
 
+    public void setGestorConta(String gestorConta) {
+        this.gestorConta = gestorConta;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -111,6 +130,10 @@ public class Cliente {
 
     public int getNumCartao() {
         return numCartao;
+    }
+
+    public String getGestorConta() {
+        return gestorConta;
     }
 
     public void setNumCartao(int numCartao) {
@@ -154,14 +177,18 @@ public class Cliente {
         return new ClienteVIP(numCliente, numCidadao, nome, morada, profissao, telefone, email, numAgencia, contas, cartoes, gestorConta);
     }
 
-    public static ClienteNormal updateClienteRegular(ClienteNormal clienteRegular) {
-        int numClt = clienteRegular.getNumCliente();
-        clienteRegular.setNome(Menu.lerStringMsg("Introduza o(s) nome(s) do Cliente num " + numClt + ": "));
-        clienteRegular.setMorada(Menu.lerStringMsg("Introduza a morada do Cliente num " + numClt + ": "));
-        clienteRegular.setProfissao(Menu.lerStringMsg("Introduza a profissao: do Cliente num " + numClt + ": "));
-        clienteRegular.setTelefone(Menu.lerStringMsg("Introduza o numero de telefone do Cliente num " + numClt + ": "));
-        clienteRegular.setEmail(Menu.lerStringMsg("Introduza endereco de email do Cliente num " + numClt + ": "));
-        return clienteRegular;
+    public static Cliente clienteEncontrado(Cliente cltRegEncontrado) {
+        ClienteNormal.updateCliente(cltRegEncontrado);
+        return cltRegEncontrado;
+    }
+    public static Cliente updateCliente(Cliente cltEncontrado) {
+//        int numCltEncontrado = cltEncontrado.getNumCliente();
+        cltEncontrado.setNome(Menu.lerStringMsg("Introduza o(s) nome(s) do Cliente num "));// + numCltEncontrado + ": "));
+        cltEncontrado.setMorada(Menu.lerStringMsg("Introduza a morada do Cliente num "));// + numCltEncontrado + ": "));
+        cltEncontrado.setProfissao(Menu.lerStringMsg("Introduza a profissao: do Cliente num "));// + numCltEncontrado + ": "));
+        cltEncontrado.setTelefone(Menu.lerStringMsg("Introduza o numero de telefone do Cliente num "));// + numCltEncontrado + ": "));
+        cltEncontrado.setEmail(Menu.lerStringMsg("Introduza endereco de email do Cliente num "));// + numCltEncontrado + ": "));
+        return cltEncontrado;
     }
 
 }
