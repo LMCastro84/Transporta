@@ -3,6 +3,7 @@ package com.banco;
 import com.banco.cartoes.Cartao;
 import com.banco.clientes.Cliente;
 import com.banco.clientes.ClienteNormal;
+import com.banco.clientes.ClienteVIP;
 import com.banco.contas.Conta;
 import com.banco.exceptions.ClienteInexistente;
 import com.banco.output.Menu;
@@ -51,24 +52,21 @@ public class Banco {
         return moradaAgencia;
     }
 
-    public static Cliente getClienteById(int id) throws ClienteInexistente{
-        Cliente cliente = null;
-        do {
-            for (int i = 0; i < clientesGeral.size(); i++) {
-                if (id == clientesGeral.get(i).getNumCliente()) {
-                    cliente = clientesGeral.get(i);
-                } else {
-                    throw new ClienteInexistente(); //??? Testar
-                }
+    public static Cliente getClienteByIdToUpdate(int numCliente) {
+        Cliente clienteEncontrado = null;
+        for (int i = 0; i < clientesGeral.size(); i++) {
+            if (numCliente == clientesGeral.get(i).getNumCliente()) {
+                clienteEncontrado = clientesGeral.get(i);
             }
-        } while (cliente == null);
-        return cliente;
+        }
+        Cliente.updateCliente(clienteEncontrado);
+        return clienteEncontrado;
     }
 
     public void adicionarCliente(Cliente clt) {
         clientesGeral.add(clt);
         if (clt.getNumAgencia() == 1) {
-
+            clientesAgenciaPorto.add(clt);
         } else {
             clientesAgenciaLisboa.add(clt);
         }
@@ -161,7 +159,7 @@ public class Banco {
 //        }
 //    }
 //    public void updateClienteString(int id) {
-//        Cliente cliente = getClienteById(id);
+//        Cliente cliente = getClienteByIdToUpdate(id);
 //    }
 //
 }
