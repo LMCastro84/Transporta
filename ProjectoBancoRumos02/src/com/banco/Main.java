@@ -83,12 +83,12 @@ public class Main {
                     break;
                 case 3:
                     int numCliente = 0;
+                    Cliente clienteEncontrado;
                     System.out.println("ACTUALIZAR DADOS DE CLIENTES");
-                    do {
-                        System.out.println("Por favor, introduza o numero de Cliente a actualizar: ");
-                        numCliente = Menu.lerInt();
-                        Cliente.updateClienteRegular(numCliente);
-                    } while (!(Banco.clientesGeral.contains(Banco.clientesGeral.get(numCliente))));
+                    System.out.println("Por favor, introduza o numero de Cliente a actualizar: ");
+                    numCliente = Menu.lerInt();
+                    clienteEncontrado = Banco.getClienteByIdToUpdate(numCliente);
+                    
                     break;
                 case 4:
                     System.out.println("ELIMINAR CLIENTES:");
@@ -107,7 +107,7 @@ public class Main {
                             case 1:
                                 System.out.println("CONSULTA DE SALDOS");
                                 System.out.println("Consultar Saldo do Cliente n�mero: ");
-                                id = Menu.lerInt();
+                                int id = Menu.lerInt();
 //                                System.out.println(banco.getSaldoByIdString(id));
 //                            Menu.lerIntMsg(null); //entrar no cliente atraves do seu n.�, e obter o seu saldo
                                 break;
