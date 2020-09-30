@@ -154,20 +154,14 @@ public class Cliente {
         return new ClienteVIP(numCliente, numCidadao, nome, morada, profissao, telefone, email, numAgencia, contas, cartoes, gestorConta);
     }
 
-    public static void updateClienteRegular(int numCliente) {
-        Cliente clienteRegUpdate;
-        clienteRegUpdate = Banco.getClienteById(numCliente);
-
-            for (int i = 0; i < Banco.clientesGeral.size(); i++) {
-                if (numCliente == Banco.clientesGeral.get(i).getNumCartao()) {
-                    clienteRegUpdate = Banco.clientesGeral.get(i);
-                    clienteRegUpdate.setNome(Menu.lerStringMsg("Introduza o(s) nome(s) do Cliente num " + numCliente + ": "));
-                    clienteRegUpdate.setMorada(Menu.lerStringMsg("Introduza a morada do Cliente num " + numCliente + ": "));
-                    clienteRegUpdate.setProfissao(Menu.lerStringMsg("Introduza a profissao: do Cliente num " + numCliente + ": "));
-                    clienteRegUpdate.setTelefone(Menu.lerStringMsg("Introduza o numero de telefone do Cliente num " + numCliente + ": "));
-                    clienteRegUpdate.setEmail(Menu.lerStringMsg("Introduza endereco de email do Cliente num " + numCliente + ": "));
-                }
-            }
+    public static ClienteNormal updateClienteRegular(ClienteNormal clienteRegular) {
+        int numClt = clienteRegular.getNumCliente();
+        clienteRegular.setNome(Menu.lerStringMsg("Introduza o(s) nome(s) do Cliente num " + numClt + ": "));
+        clienteRegular.setMorada(Menu.lerStringMsg("Introduza a morada do Cliente num " + numClt + ": "));
+        clienteRegular.setProfissao(Menu.lerStringMsg("Introduza a profissao: do Cliente num " + numClt + ": "));
+        clienteRegular.setTelefone(Menu.lerStringMsg("Introduza o numero de telefone do Cliente num " + numClt + ": "));
+        clienteRegular.setEmail(Menu.lerStringMsg("Introduza endereco de email do Cliente num " + numClt + ": "));
+        return clienteRegular;
     }
 
 }
