@@ -12,143 +12,148 @@ import java.util.List;
 
 public class Banco {
 
-    String nomeBanco = "BANCO JAVA";
-    private int numAgencia;
-    private String moradaAgencia;
-    public List<Cliente> clientesAgenciaPorto = new ArrayList<Cliente>();
-    public List<Cliente> clientesAgenciaLisboa = new ArrayList<Cliente>();
-    public static List<Cliente> clientesGeral = new ArrayList<Cliente>();
-    public List<Conta> contas = new ArrayList<Conta>();
-    public List<Cartao> cartoes = new ArrayList<>();
+	String nomeBanco = "BANCO JAVA";
+	private int numAgencia;
+	private String moradaAgencia;
+	public List<Cliente> clientesAgenciaPorto = new ArrayList<Cliente>();
+	public List<Cliente> clientesAgenciaLisboa = new ArrayList<Cliente>();
+	public static List<Cliente> clientesGeral = new ArrayList<Cliente>();
+	public List<Conta> contas = new ArrayList<Conta>();
+	public List<Cartao> cartoes = new ArrayList<>();
 
-    Menu menu = new Menu();
+	Menu menu = new Menu();
 
-    public Banco() {
-    }
+	public Banco() {
+	}
 
-    public Banco(int numAgencia, String moradaAgencia, ArrayList<Cliente> clientesGeral) {
-        this.numAgencia = numAgencia;
-        this.moradaAgencia = moradaAgencia;
-        this.clientesGeral = clientesGeral;
-    }
+	public Banco(int numAgencia, String moradaAgencia, ArrayList<Cliente> clientesGeral) {
+		this.numAgencia = numAgencia;
+		this.moradaAgencia = moradaAgencia;
+		this.clientesGeral = clientesGeral;
+	}
 
-    public String getNomeBanco() {
-        return nomeBanco;
-    }
+	public String getNomeBanco() {
+		return nomeBanco;
+	}
 
-    public void setNumAgencia(int numAgencia) {
-        this.numAgencia = numAgencia;
-    }
+	public void setNumAgencia(int numAgencia) {
+		this.numAgencia = numAgencia;
+	}
 
-    public void setMoradaAgencia(String moradaAgencia) {
-        this.moradaAgencia = moradaAgencia;
-    }
+	public void setMoradaAgencia(String moradaAgencia) {
+		this.moradaAgencia = moradaAgencia;
+	}
 
-    public int getNumAgencia() {
-        return numAgencia;
-    }
+	public int getNumAgencia() {
+		return numAgencia;
+	}
 
-    public String getMoradaAgencia() {
-        return moradaAgencia;
-    }
+	public String getMoradaAgencia() {
+		return moradaAgencia;
+	}
 
-    public static Cliente getClienteByIdToUpdate(int numCliente) {
-        Cliente clienteEncontrado = null;
-        for (int i = 0; i < clientesGeral.size(); i++) {
-            if (numCliente == clientesGeral.get(i).getNumCliente()) {
-                clienteEncontrado = clientesGeral.get(i);
-            }
-        }
-        Cliente.updateCliente(clienteEncontrado);
-        return clienteEncontrado;
-    }
+	public static Cliente getClienteByIdToUpdate(int numCliente) {
+		Cliente clienteEncontrado = null;
+		for (int i = 0; i < clientesGeral.size(); i++) {
+			if (numCliente == clientesGeral.get(i).getNumCliente()) {
+				clienteEncontrado = clientesGeral.get(i);
+			}
+		}
+		Cliente.updateCliente(clienteEncontrado);
+		return clienteEncontrado;
+	}
 
-    public void adicionarCliente(Cliente clt) {
-        clientesGeral.add(clt);
-        if (clt.getNumAgencia() == 1) {
-            clientesAgenciaPorto.add(clt);
-        } else {
-            clientesAgenciaLisboa.add(clt);
-        }
-    }
+	public void adicionarCliente(Cliente clt) {
+		clientesGeral.add(clt);
+		if (clt.getNumAgencia() != 1) {
+			clientesAgenciaLisboa.add(clt);
+		} else {
+			clientesAgenciaPorto.add(clt);
+		}
+	}
 
-    public void listarClientesPorto() {
-        Cliente cltNormal = new ClienteNormal();
-        for (int i = 0; i < clientesAgenciaPorto.size(); i++) {
-            Cliente clt = clientesAgenciaPorto.get(i);
-            boolean isEqual = clt.getClass().equals(cltNormal.getClass());
-            if (isEqual) {
-                System.out.println("Cliente num: " + clt.getNumCliente() + ", Nome: " + clt.getNome());
-            } else {
-                System.out.println("Cliente VIP num: " + clt.getNumCliente() + ", Nome: " + clt.getNome());
-            }
-            System.out.println("Contas: ");
-            for (int j = 0; j < clt.contas.size(); j++) {
-                Conta cnta = clt.contas.get(j);
-                System.out.println("Conta num " + cnta.getNumConta() + ", Saldo: "
-                        + cnta.getSaldo() + "€.");
-            }
-            System.out.println("Cartoes: ");
-            for (int j = 0; j < clt.cartoes.size(); j++) {
-                Cartao cartao = clt.cartoes.get(j);
-                System.out.println("Cartao num " + cartao.getNumCartao() + ".");
-            }
-            System.out.println("---------------//---------------");
-            System.out.println("");
-        }
-    }
+	public void listarClientesPorto() {
+		if (!clientesAgenciaPorto.isEmpty()) {
+			Cliente cltNormal = new ClienteNormal();
+			for (int i = 0; i < clientesAgenciaPorto.size(); i++) {
+				Cliente clt = clientesAgenciaPorto.get(i);
+				boolean isEqual = clt.getClass().equals(cltNormal.getClass());
+				if (isEqual) {
+					System.out.println("Cliente (Porto) num: " + clt.getNumCliente() + ", Nome: " + clt.getNome());
+				} else {
+					System.out.println("Cliente VIP (Porto) num: " + clt.getNumCliente() + ", Nome: " + clt.getNome());
+				}
+				System.out.println("Contas: ");
+				for (int j = 0; j < clt.contas.size(); j++) {
+					Conta cnta = clt.contas.get(j);
+					System.out.println("Conta num " + cnta.getNumConta() + ", Saldo: " + cnta.getSaldo() + "€.");
+				}
+				System.out.println("Cartoes: ");
+				for (int j = 0; j < clt.cartoes.size(); j++) {
+					Cartao cartao = clt.cartoes.get(j);
+					System.out.println("Cartao num " + cartao.getNumCartao() + ".");
+				}
+				System.out.println("---------------//---------------");
+				System.out.println("");
+			}
+		} else {
+			System.out.println("A Agencia de Porto nao tem Clientes!");
+		}
+	}
 
-    public void listarClientesLisboa() {
-        Cliente cltNormal = new ClienteNormal();
-        for (int i = 0; i < clientesAgenciaLisboa.size(); i++) {
-            Cliente clt = clientesAgenciaLisboa.get(i);
-            boolean isEqual = clt.getClass().equals(cltNormal.getClass());
-            if (isEqual) {
-                System.out.println("Cliente num: " + clt.getNumCliente() + ", Nome: " + clt.getNome());
-            } else {
-                System.out.println("Cliente VIP num: " + clt.getNumCliente() + ", Nome: " + clt.getNome());
-            }
-            System.out.println("Contas: ");
-            for (int j = 0; j < clt.contas.size(); j++) {
-                Conta cnta = clt.contas.get(j);
-                System.out.println("Conta num " + cnta.getNumConta() + ", Saldo: "
-                        + cnta.getSaldo() + "€.");
-            }
-            System.out.println("Cartoes: ");
-            for (int j = 0; j < clt.cartoes.size(); j++) {
-                Cartao cartao = clt.cartoes.get(j);
-                System.out.println("Cartao num " + cartao.getNumCartao() + ".");
-            }
-            System.out.println("---------------//---------------");
-            System.out.println("");
-        }
-    }
+	public void listarClientesLisboa() {
+		if (!clientesAgenciaLisboa.isEmpty()) {
+			Cliente cltNormal = new ClienteNormal();
+			for (int i = 0; i < clientesAgenciaLisboa.size(); i++) {
+				Cliente clt = clientesAgenciaLisboa.get(i);
+				boolean isEqual = clt.getClass().equals(cltNormal.getClass());
+				if (isEqual) {
+					System.out.println("Cliente (Lisboa) num: " + clt.getNumCliente() + ", Nome: " + clt.getNome());
+				} else {
+					System.out.println("Cliente VIP (Lisboa) num: " + clt.getNumCliente() + ", Nome: " + clt.getNome());
+				}
+				System.out.println("Contas: ");
+				for (int j = 0; j < clt.contas.size(); j++) {
+					Conta cnta = clt.contas.get(j);
+					System.out.println("Conta num " + cnta.getNumConta() + ", Saldo: " + cnta.getSaldo() + "€.");
+				}
+				System.out.println("Cartoes: ");
+				for (int j = 0; j < clt.cartoes.size(); j++) {
+					Cartao cartao = clt.cartoes.get(j);
+					System.out.println("Cartao num " + cartao.getNumCartao() + ".");
+				}
+				System.out.println("---------------//---------------");
+				System.out.println("");
+			}
+		} else {
+			System.out.println("A Agencia de Lisboa nao tem Clientes!");
+		}
+	}
 
-    public void listarClientesGeral() {
-        Cliente cltNormal = new ClienteNormal();
-        for (int i = 0; i < clientesGeral.size(); i++) {
-            Cliente clt = clientesGeral.get(i);
-            boolean isEqual = clt.getClass().equals(cltNormal.getClass());
-            if (isEqual) {
-                System.out.println("Cliente num: " + clt.getNumCliente() + ", Nome: " + clt.getNome());
-            } else {
-                System.out.println("Cliente VIP num: " + clt.getNumCliente() + ", Nome: " + clt.getNome());
-            }
-            System.out.println("Contas: ");
-            for (int j = 0; j < clt.contas.size(); j++) {
-                Conta cnta = clt.contas.get(j);
-                System.out.println("Conta num " + cnta.getNumConta() + ", Saldo: "
-                        + cnta.getSaldo() + "€.");
-            }
-            System.out.println("Cartoes: ");
-            for (int j = 0; j < clt.cartoes.size(); j++) {
-                Cartao cartao = clt.cartoes.get(j);
-                System.out.println("Cartao num " + cartao.getNumCartao() + ".");
-            }
-            System.out.println("---------------//---------------");
-            System.out.println("");
-        }
-    }
+	public void listarClientesGeral() {
+		Cliente cltNormal = new ClienteNormal();
+		for (int i = 0; i < clientesGeral.size(); i++) {
+			Cliente clt = clientesGeral.get(i);
+			boolean isEqual = clt.getClass().equals(cltNormal.getClass());
+			if (isEqual) {
+				System.out.println("Cliente num: " + clt.getNumCliente() + ", Nome: " + clt.getNome());
+			} else {
+				System.out.println("Cliente VIP num: " + clt.getNumCliente() + ", Nome: " + clt.getNome());
+			}
+			System.out.println("Contas: ");
+			for (int j = 0; j < clt.contas.size(); j++) {
+				Conta cnta = clt.contas.get(j);
+				System.out.println("Conta num " + cnta.getNumConta() + ", Saldo: " + cnta.getSaldo() + "€.");
+			}
+			System.out.println("Cartoes: ");
+			for (int j = 0; j < clt.cartoes.size(); j++) {
+				Cartao cartao = clt.cartoes.get(j);
+				System.out.println("Cartao num " + cartao.getNumCartao() + ".");
+			}
+			System.out.println("---------------//---------------");
+			System.out.println("");
+		}
+	}
 
 //public void eliminarCliente(int numCliente) {
 //        for (int i = 0; i < clientesGeral.size(); i++) {
