@@ -54,18 +54,18 @@ public class BankAccount {
         do {
             System.out.println("----------");
             System.out.println("Introduzir opcao");
-            System.out.println("----------");            
+            System.out.println("----------");
             opcao = scanner.next().charAt(0);
             System.out.println("");
-            
-            switch(opcao){
+
+            switch (opcao) {
                 case 'A':
                     System.out.println("----------");
-                    System.out.println("Saldo = "+saldo);
+                    System.out.println("Saldo = " + saldo);
                     System.out.println("----------");
                     System.out.println("");
                     break;
-                    
+
                 case 'B':
                     System.out.println("----------");
                     System.out.println("Introduzir valor a depositar");
@@ -74,7 +74,7 @@ public class BankAccount {
                     depositar(quantia);
                     System.out.println("");
                     break;
-                    
+
                 case 'C':
                     System.out.println("----------");
                     System.out.println("Introduzir valor a levantar");
@@ -83,17 +83,25 @@ public class BankAccount {
                     levantar(quantia2);
                     System.out.println("");
                     break;
-                    
+
                 case 'D':
                     System.out.println("----------");
                     getUltimaTransacao();
                     System.out.println("----------");
                     System.out.println("");
                     break;
+
+                case 'E':
+                    System.out.println("----------");
+                    break;
+
+                default:
+                    System.out.println("Opcao nao valida. Por favor tente novamente.");
+                    break;
             }
 
-        }while (opcao != 'E');
-        
+        } while (opcao != 'E');
+
         System.out.println("Obrigado por utilizar os nossos servicos!");
     }
 
