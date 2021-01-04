@@ -1,0 +1,8 @@
+Email Application:
+Create email accounts for new hires of a company.
+
+Generate email with the suntax: firstname.lastname@department.company.com;
+Determine the department;
+Generate random String for a password;
+Have set methods to change the password, set the mailbox capacity and define an alternate email address;
+Have methods to display the name, email, and mailbox company.
