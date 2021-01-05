@@ -28,5 +28,12 @@ public class Student {
         this.grade = grade;
     }
 
-
+    //student's name and id are immutable
+    /**
+     * 
+     * @param grade new student's grade
+     */
+    public void setGrade (int grade){
+        this.grade = grade;
+    }
 }
