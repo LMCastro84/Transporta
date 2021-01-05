@@ -36,4 +36,13 @@ public class Student {
     public void setGrade (int grade){
         this.grade = grade;
     }
+    /**
+     * Keep adding the fees to feesPaid
+     * Add fees to fees paid
+     * The school recieves funds
+     * @param fees paid by student
+     */
+    public void updateFeesPaid (int fees){
+        feesPaid+=fees;
+    }
 }
