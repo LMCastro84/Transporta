@@ -67,4 +67,7 @@ public class Student {
         return feesTotal;
     }
 
+    public int getRemainingFees() {
+        return feesTotal-feesPaid;
+    }
 }
