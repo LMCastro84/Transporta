@@ -70,7 +70,7 @@ public class School {
      *
      * @param moneySpent
      */
-    public void updateTotalMoneySpent(int moneySpent) {
+    public static void updateTotalMoneySpent(int moneySpent) {
         totalMoneyEarned -= moneySpent;
     }
 
