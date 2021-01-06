@@ -14,8 +14,8 @@ public class Student {
     private int feesTotal;
 
     /**
-     *Fees for every student: 30000
-     * Fees paid initially - 0
+     * Fees for every student: 30000 Fees paid initially - 0
+     *
      * @param id student id - unique
      * @param name student name
      * @param grade student grade
@@ -30,20 +30,21 @@ public class Student {
 
     //student's name and id are immutable
     /**
-     * 
+     *
      * @param grade new student's grade
      */
-    public void setGrade (int grade){
+    public void setGrade(int grade) {
         this.grade = grade;
     }
+
     /**
-     * Keep adding the fees to feesPaid
-     * Add fees to fees paid
-     * The school recieves funds
+     * Keep adding the fees to feesPaid Add fees to fees paid The school
+     * recieves funds
+     *
      * @param fees paid by student
      */
-    public void updateFeesPaid (int fees){
-        feesPaid+=fees;
+    public void payFees(int fees) {
+        feesPaid += fees;
     }
 
     public int getId() {
@@ -65,6 +66,5 @@ public class Student {
     public int getFeesTotal() {
         return feesTotal;
     }
-    
-    
+
 }
