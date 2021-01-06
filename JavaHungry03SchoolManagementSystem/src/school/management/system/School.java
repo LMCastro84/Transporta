@@ -31,33 +31,47 @@ public class School {
         return teachers;
     }
 
-    public void setTeachers(List<Teacher> teachers) {
-        this.teachers = teachers;
+    /**
+     * Adds a teacher to school
+     *
+     * @param teacher
+     */
+    public void addTeacher(Teacher teacher) {
+        teachers.add(teacher);
     }
 
     public List<Student> getStudents() {
         return students;
     }
 
-    public void setStudents(List<Student> students) {
-        this.students = students;
+    /**
+     * Adds a student to school
+     *
+     * @param student
+     */
+    public void addStudent(Student student) {
+        students.add(student);
     }
 
     public int getTotalMoneyEarned() {
         return totalMoneyEarned;
     }
 
-    public void setTotalMoneyEarned(int totalMoneyEarned) {
-        this.totalMoneyEarned = totalMoneyEarned;
+    public void updateTotalMoneyEarned(int moneyEarned) {
+        this.totalMoneyEarned += moneyEarned;
     }
 
     public int getTotalMoneySpent() {
         return totalMoneySpent;
     }
 
-    public void setTotalMoneySpent(int totalMoneySpent) {
-        this.totalMoneySpent = totalMoneySpent;
+    /**
+     * Update the money spent by school (teachers's salary)
+     *
+     * @param moneySpent
+     */
+    public void updateTotalMoneySpent(int moneySpent) {
+        totalMoneyEarned -= moneySpent;
     }
-    
-    
+
 }
