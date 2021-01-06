@@ -42,12 +42,13 @@ public class Teacher {
     }
 
     /**
-     * Adds to salary Removes from total money earned of school
+     * Adds to salaryEarned Removes from total money earned of school
      *
      * @param salary
      */
     public void receiveSalary(int salary) {
-
+        salaryEarned += salary;
+        School.updateTotalMoneySpent(salary);
     }
 
 }
