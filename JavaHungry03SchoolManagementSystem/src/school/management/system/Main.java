@@ -42,5 +42,8 @@ public class Main {
         maria.receiveSalary(maria.getSalary());
         System.out.println("Escola pagou de Salario a(o) professor(a) " + maria.getName() + ", e de momento tem de credito "
                 + escola.getTotalMoneyEarned());
+        
+        System.out.println(quim);
+        System.out.println(ze);
     }
 }
