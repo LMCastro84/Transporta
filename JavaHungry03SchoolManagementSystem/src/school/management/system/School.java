@@ -12,8 +12,8 @@ public class School {
 
     List<Teacher> teachers = new ArrayList<>();
     List<Student> students = new ArrayList<>();
-    private int totalMoneyEarned;
-    private int totalMoneySpent;
+    private static int totalMoneyEarned;
+    private static int totalMoneySpent;
 
     /**
      *
@@ -57,8 +57,8 @@ public class School {
         return totalMoneyEarned;
     }
 
-    public void updateTotalMoneyEarned(int moneyEarned) {
-        this.totalMoneyEarned += moneyEarned;
+    public static void updateTotalMoneyEarned(int moneyEarned) {
+        totalMoneyEarned += moneyEarned;
     }
 
     public int getTotalMoneySpent() {
