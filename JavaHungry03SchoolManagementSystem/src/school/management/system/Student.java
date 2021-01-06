@@ -45,6 +45,7 @@ public class Student {
      */
     public void payFees(int fees) {
         feesPaid += fees;
+        School.updateTotalMoneyEarned(feesPaid);
     }
 
     public int getId() {
