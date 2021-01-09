@@ -24,8 +24,6 @@ public class Student {
                 + "Enter student class level: ");
         this.gradeYear = in.nextInt();
         setStudentID();
-        System.out.println(firstName + " " + lastName + " - " + gradeYear
-                + ", Student ID: " + studentID);
 
     }
 
@@ -51,8 +49,6 @@ public class Student {
                 break;
             }
         } while (1 != 0);
-
-        System.out.println("ENROLLED IN: " + courses);
     }
 
     //View balance
@@ -73,8 +69,9 @@ public class Student {
 
     //Show status
     public String toString() {
-        return "Name: " + firstName + " " + lastName + "\nCourses Enrolled: "
-                + courses + "\nBalance: " + tuitionBalance + "€.";
+        return "Name: " + firstName + " " + lastName + "\nGrade Level: " + gradeYear
+                + "\nStudent ID: " + studentID + "\nCourses Enrolled: " + courses
+                + "\nBalance: " + tuitionBalance + "€.";
 
     }
 }
