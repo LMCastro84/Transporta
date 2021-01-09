@@ -8,7 +8,7 @@ public class Student {
     private String lastName;
     private int gradeYear;
     private String studentID;
-    private String courses = null;
+    private String courses = "";
     private double tuitionBalance = 0;
     private static double costOfCourse = 600;
     private static int id = 1000;
@@ -40,7 +40,7 @@ public class Student {
     public void enroll() {
         // Get inside a loop, user hits Q
         do {
-            System.out.println("Enter course to enroll (Q to quit): ");
+            System.out.print("Enter course to enroll (Q to quit): ");
             Scanner in = new Scanner(System.in);
             String course = in.nextLine();
 
@@ -72,7 +72,7 @@ public class Student {
     }
 
     //Show status
-    public String showInfo() {
+    public String toString() {
         return "Name: " + firstName + " " + lastName + "\nCourses Enrolled: "
                 + courses + "\nBalance: " + tuitionBalance + "€.";
 
