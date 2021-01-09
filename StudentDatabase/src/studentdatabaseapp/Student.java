@@ -38,15 +38,17 @@ public class Student {
 
     //Enrol in courses
     public void enroll() {
-        // Get inside a loop, user hits 0
-        System.out.println("Entercourse to enroll (Q to quit): ");
-        Scanner in = new Scanner(System.in);
-        String course = in.nextLine();
+        // Get inside a loop, user hits Q
         do {
-            if (course != "Q") {
+            System.out.println("Enter course to enroll (Q to quit): ");
+            Scanner in = new Scanner(System.in);
+            String course = in.nextLine();
+
+            if (!course.equals("Q")) {
                 courses = courses + "\n" + course;
                 tuitionBalance = tuitionBalance + costOfCourse;
             } else {
+                System.out.println("BREAK!");
                 break;
             }
         } while (1 != 0);
