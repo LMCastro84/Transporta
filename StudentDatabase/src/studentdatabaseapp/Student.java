@@ -68,6 +68,7 @@ public class Student {
     }
 
     //Show status
+    @Override
     public String toString() {
         return "Name: " + firstName + " " + lastName + "\nGrade Level: " + gradeYear
                 + "\nStudent ID: " + studentID + "\nCourses Enrolled: " + courses
