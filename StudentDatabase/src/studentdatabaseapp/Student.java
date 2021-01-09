@@ -7,10 +7,11 @@ public class Student {
     private String firstName;
     private String lastName;
     private int gradeYear;
-    private int studentID;
+    private String studentID;
     private String courses;
     private int tuitionBalance;
-    private double costOfCourse = 600;
+    private static double costOfCourse = 600;
+    private static int id = 1000;
 
     //Constructor with name and year
     public Student() {
@@ -22,9 +23,18 @@ public class Student {
         System.out.println("1 - Freshmen\n2 - Sophmore\n3 - Junior\n4 - Senior\n"
                 + "Enter student class level: ");
         this.gradeYear = in.nextInt();
-        System.out.println(firstName + " "+lastName+" - "+gradeYear+".");
+        setStudentID();
+        System.out.println(firstName + " " + lastName + " - " + gradeYear + ", Student ID: "
+                + studentID);
+
     }
+
     //Generate ID
+    private void setStudentID() {
+        //Grade level + ID
+        id++;
+        this.studentID = gradeYear + "" + id;
+    }
 
     //Enrol in courses
     //View balance
