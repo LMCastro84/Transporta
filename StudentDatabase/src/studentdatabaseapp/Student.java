@@ -24,8 +24,8 @@ public class Student {
                 + "Enter student class level: ");
         this.gradeYear = in.nextInt();
         setStudentID();
-        System.out.println(firstName + " " + lastName + " - " + gradeYear + ", Student ID: "
-                + studentID);
+        System.out.println(firstName + " " + lastName + " - " + gradeYear
+                + ", Student ID: " + studentID);
 
     }
 
@@ -70,5 +70,11 @@ public class Student {
         System.out.println("Thank you for your payment of " + payment + "€.");
         viewBalance();
     }
+
     //Show status
+    public String showInfo() {
+        return "Name: " + firstName + " " + lastName + "\nCourses Enrolled: "
+                + courses + "\nBalance: " + tuitionBalance + "€.";
+
+    }
 }
