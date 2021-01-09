@@ -56,7 +56,16 @@ public class Student {
         System.out.println("ENROLLED IN: " + courses);
         System.out.println("TUITION BALANCE: " + tuitionBalance);
     }
+
     //View balance
+    public void viewBalance(){
+        System.out.println("Your balance is: "+tuitionBalance+"€.");
+    }
     //Pay Tuition
+    public void payTuition(double payment){
+        tuitionBalance = tuitionBalance - payment;
+        System.out.println("Thank you for your payment of "+payment+"€.");
+        viewBalance();
+    }
     //Show status
 }
