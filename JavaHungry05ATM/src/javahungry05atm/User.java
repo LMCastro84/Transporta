@@ -47,8 +47,17 @@ public class User {
             ex.printStackTrace();
             System.exit(1);
         }
-        
+
         //get a new, unique universal ID for the user
         this.uuid = theBank.getNewUserUUID();
+
+        //create empty list of accounts
+        this.accounts = new ArrayList<Account>();
+        
+        //print log message
+        
+        System.out.printf("New user %s, %s with ID %s created.\n", lastName,
+                firstName, this.uuid);
+
     }
 }
