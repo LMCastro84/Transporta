@@ -68,4 +68,8 @@ public class User {
                 firstName, this.uuid);
 
     }
+
+    public void addAccount(Account aThis) {
+
+    }
 }
