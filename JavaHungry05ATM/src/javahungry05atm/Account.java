@@ -1,14 +1,31 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package javahungry05atm;
 
-/**
- *
- * @author luisc
- */
+import java.util.ArrayList;
+
 public class Account {
+
+    /**
+     * Name of the account
+     */
+    private String name;
     
+    /**
+     * Current balance
+     */
+    private double balance;
+    
+    /**
+     * ID number
+     */
+    private String uuid;
+    
+    /**
+     * User object that uses this account
+     */
+    private User holder;
+    
+    /**
+     * List of transactions for this account
+     */
+    private ArrayList<Transaction> transactions;
 }
