@@ -47,5 +47,8 @@ public class User {
             ex.printStackTrace();
             System.exit(1);
         }
+        
+        //get a new, unique universal ID for the user
+        this.uuid = theBank.getNewUserUUID();
     }
 }
