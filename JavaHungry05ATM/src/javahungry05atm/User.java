@@ -2,6 +2,9 @@ package javahungry05atm;
 
 import java.util.ArrayList;
 import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class User {
 
@@ -34,8 +37,15 @@ public class User {
         //set user's name
         this.firstName = firstName;
         this.lastName = lastName;
-        
+
         //store pin's MD5 hash, rather than the original value,for security reasons
-        
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            this.pinHash = md.digest(pin.getBytes());
+        } catch (NoSuchAlgorithmException ex) {
+            System.err.println("error, caught NoSuchAlgorithmException");
+            ex.printStackTrace();
+            System.exit(1);
+        }
     }
 }
