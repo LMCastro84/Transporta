@@ -33,6 +33,14 @@ public class User {
      */
     private ArrayList<Account> accounts;
 
+    
+    /**
+     * Create new user
+     * @param firstName user's first name
+     * @param lastName  user's last name
+     * @param pin       user's account pin number
+     * @param theBank   Bank object that the user is a costumer of
+     */
     public User(String firstName, String lastName, String pin, Bank theBank) {
         //set user's name
         this.firstName = firstName;
