@@ -1,6 +1,7 @@
 package javahungry05atm;
 
 import java.util.ArrayList;
+import java.security.MessageDigest;
 
 public class User {
 
