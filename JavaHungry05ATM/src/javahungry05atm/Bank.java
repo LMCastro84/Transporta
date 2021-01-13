@@ -27,7 +27,12 @@ public class Bank {
 
     }
 
-    void addAccount(Account aThis) {
-
+    /**
+     * Add account
+     *
+     * @param anAccount account to add
+     */
+    void addAccount(Account anAccount) {
+        this.accounts.add(anAccount);
     }
 }
