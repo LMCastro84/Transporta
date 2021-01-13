@@ -24,6 +24,13 @@ public class Account {
      */
     private ArrayList<Transaction> transactions;
 
+    
+    /**
+     * 
+     * @param name      name of account
+     * @param holder    User object that holds account
+     * @param theBank   bank that issues account
+     */
     public Account(String name, User holder, Bank theBank) {
         //set the account name and holder
         this.name = name;
