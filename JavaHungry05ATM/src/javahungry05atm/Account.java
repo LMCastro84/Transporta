@@ -10,11 +10,6 @@ public class Account {
     private String name;
 
     /**
-     * Current balance
-     */
-    private double balance;
-
-    /**
      * ID number
      */
     private String uuid;
@@ -29,17 +24,17 @@ public class Account {
      */
     private ArrayList<Transaction> transactions;
 
-    public Account(String name, User holder, Bank theBank){
+    public Account(String name, User holder, Bank theBank) {
         //set the account name and holder
         this.name = name;
         this.holder = holder;
-        
+
         //get new account UUID
         this.uuid = theBank.getNewAccountUUID();
-        
+
         //initialize transactions
         this.transactions = new ArrayList<Transaction>();
-        
+
         //add to holder and bank lists
         holder.addAccount(this);
         theBank.addAccount(this);
