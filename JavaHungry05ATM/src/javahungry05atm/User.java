@@ -76,4 +76,12 @@ public class User {
     public void addAccount(Account anAccount) {
         this.accounts.add(anAccount);
     }
+
+    /**
+     * Return user's UUID
+     * @return uuid
+     */
+    public String getUUID() {
+        return this.uuid;
+    }
 }
