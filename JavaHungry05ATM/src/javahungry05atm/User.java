@@ -68,6 +68,11 @@ public class User {
 
     }
 
+    /**
+     * Add account for user
+     *
+     * @param anAccount account to add
+     */
     public void addAccount(Account anAccount) {
         this.accounts.add(anAccount);
     }
