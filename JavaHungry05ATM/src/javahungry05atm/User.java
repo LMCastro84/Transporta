@@ -33,13 +33,13 @@ public class User {
      */
     private ArrayList<Account> accounts;
 
-    
     /**
      * Create new user
+     *
      * @param firstName user's first name
-     * @param lastName  user's last name
-     * @param pin       user's account pin number
-     * @param theBank   Bank object that the user is a costumer of
+     * @param lastName user's last name
+     * @param pin user's account pin number
+     * @param theBank Bank object that the user is a costumer of
      */
     public User(String firstName, String lastName, String pin, Bank theBank) {
         //set user's name
@@ -61,15 +61,14 @@ public class User {
 
         //create empty list of accounts
         this.accounts = new ArrayList<Account>();
-        
+
         //print log message
-        
         System.out.printf("New user %s, %s with ID %s created.\n", lastName,
                 firstName, this.uuid);
 
     }
 
-    public void addAccount(Account aThis) {
-
+    public void addAccount(Account anAccount) {
+        this.accounts.add(anAccount);
     }
 }
