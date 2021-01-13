@@ -24,12 +24,11 @@ public class Account {
      */
     private ArrayList<Transaction> transactions;
 
-    
     /**
-     * 
-     * @param name      name of account
-     * @param holder    User object that holds account
-     * @param theBank   bank that issues account
+     *
+     * @param name name of account
+     * @param holder User object that holds account
+     * @param theBank bank that issues account
      */
     public Account(String name, User holder, Bank theBank) {
         //set the account name and holder
@@ -45,5 +44,14 @@ public class Account {
         //add to holder and bank lists
         holder.addAccount(this);
         theBank.addAccount(this);
+    }
+
+    /**
+     * Get account ID
+     *
+     * @return uuid
+     */
+    public String getUUID() {
+        return this.uuid;
     }
 }
