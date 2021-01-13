@@ -36,14 +36,14 @@ public class Bank {
         do {
             //generate number
             uuid = "";
-            for (int i = 0; i < length; i++){
-                uuid += ((Integer)rng.nextInt(10)).toString();
+            for (int i = 0; i < length; i++) {
+                uuid += ((Integer) rng.nextInt(10)).toString();
             }
-            
+
             //check if uuid is unique
             nonUnique = false;
-            for (User u : this.users){
-                if (uuid.compareTo(u.getUUID()) == 0){
+            for (User u : this.users) {
+                if (uuid.compareTo(u.getUUID()) == 0) {
                     nonUnique = true;
                     break;
                 }
@@ -53,8 +53,37 @@ public class Bank {
         return uuid;
     }
 
+    /**
+     * Generate a new universally unique ID for an account
+     *
+     * @return uuid
+     */
     public String getNewAccountUUID() {
+        //initialize
+        String uuid;
+        Random rng = new Random();
+        int length = 10;
+        boolean nonUnique;
 
+        //continue looping until get a unique ID
+        do {
+            //generate number
+            uuid = "";
+            for (int i = 0; i < length; i++) {
+                uuid += ((Integer) rng.nextInt(10)).toString();
+            }
+
+            //check if uuid is unique
+            nonUnique = false;
+            for (Account a : this.accounts) {
+                if (uuid.compareTo(a.getUUID()) == 0) {
+                    nonUnique = true;
+                    break;
+                }
+            }
+        } while (nonUnique);
+
+        return uuid;
     }
 
     /**
@@ -62,7 +91,8 @@ public class Bank {
      *
      * @param anAccount account to add
      */
-    void addAccount(Account anAccount) {
+    public void addAccount(Account anAccount) {
         this.accounts.add(anAccount);
     }
+
 }
