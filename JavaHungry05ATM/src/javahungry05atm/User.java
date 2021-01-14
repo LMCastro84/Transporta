@@ -92,7 +92,7 @@ public class User {
      * @param pin pin to chek
      * @return whether the pin is valid or not
      */
-    public boolean valdatePin(String pin) {
+    public boolean validatePin(String pin) {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
             return MessageDigest.isEqual(md.digest(pin.getBytes()), this.pinHash);
