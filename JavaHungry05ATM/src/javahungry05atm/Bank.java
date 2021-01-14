@@ -86,13 +86,4 @@ public class Bank {
         return uuid;
     }
 
-    /**
-     * Add account
-     *
-     * @param anAccount account to add
-     */
-    public void addAccount(Account anAccount) {
-        this.accounts.add(anAccount);
-    }
-
 }
