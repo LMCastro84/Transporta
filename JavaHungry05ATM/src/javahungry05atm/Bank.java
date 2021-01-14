@@ -95,6 +95,14 @@ public class Bank {
         this.accounts.add(anAccount);
     }
 
+    /**
+     * Create new user of the bank
+     *
+     * @param firstName user's first name
+     * @param lastName user's last name
+     * @param pin user's pin
+     * @return new User object
+     */
     public User addUser(String firstName, String lastName, String pin) {
         //create new User object and add it to list
         User newUser = new User(firstName, lastName, pin, this);
@@ -106,6 +114,10 @@ public class Bank {
         this.addAccount(newAccount);
 
         return newUser;
+    }
+
+    public User userLogin(String userID, String pin) {
+
     }
 
 }
