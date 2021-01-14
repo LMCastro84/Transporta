@@ -116,8 +116,27 @@ public class Bank {
         return newUser;
     }
 
+    /**
+     * Get the user object associated with a particular userID and pin, if they
+     * are valid
+     *
+     * @param userID    UUID of the user to login
+     * @param pin       pin of the user
+     * @return          User object if the login is successful, or null if it is not
+     */
     public User userLogin(String userID, String pin) {
-
+        
+        //search through list of users
+        for (User u : this.users){
+            
+            //check if userID is correct
+            if(u.getUUID().compareTo(userID) == 0 && u.validatePin(pin)){
+                return u;
+            }
+        }
+        
+        //if the user isn't found or have an incorrect pin
+        return null;
     }
 
 }
