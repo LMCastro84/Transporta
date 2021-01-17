@@ -103,4 +103,13 @@ public class User {
         }
         return false;
     }
+
+    /**
+     * Returns the user's first name
+     *
+     * @return first name
+     */
+    public String getFirstName() {
+        return this.firstName;
+    }
 }
