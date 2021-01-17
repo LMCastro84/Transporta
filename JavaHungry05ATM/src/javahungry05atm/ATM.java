@@ -64,4 +64,25 @@ public class ATM {
         return authenticatedUser;
 
     }
+
+    public static void prinUserMenu(User theUser, Scanner in) {
+        //print a summary of user's accounts
+        theUser.printAccountsSummary();
+        
+        //initialize
+        int choice;
+        
+        //user menu
+        do{
+            System.out.printf("Welcome %s, what would you like to do?", theUser.getFirstName());
+            System.out.println("1- Account transaction history");
+            System.out.println("2- Withdraw");
+            System.out.println("3- Deposit");
+            System.out.println("4- Transfer");
+            System.out.println("5- Quit");
+            System.out.println("");
+            System.out.print("Enter choice: ");
+            choice = in.nextInt();
+        }
+    }
 }
