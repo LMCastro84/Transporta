@@ -150,4 +150,12 @@ public class Bank {
         return null;
     }
 
+    /**
+     * Get the name of the bank
+     *
+     * @return name of bank
+     */
+    public String getName() {
+        return this.name;
+    }
 }
