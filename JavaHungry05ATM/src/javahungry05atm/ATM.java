@@ -68,12 +68,12 @@ public class ATM {
     public static void prinUserMenu(User theUser, Scanner in) {
         //print a summary of user's accounts
         theUser.printAccountsSummary();
-        
+
         //initialize
         int choice;
-        
+
         //user menu
-        do{
+        do {
             System.out.printf("Welcome %s, what would you like to do?", theUser.getFirstName());
             System.out.println("1- Account transaction history");
             System.out.println("2- Withdraw");
@@ -83,6 +83,10 @@ public class ATM {
             System.out.println("");
             System.out.print("Enter choice: ");
             choice = in.nextInt();
-        }
+
+            if (choice < 1 || choice > 5) {
+                System.out.println("Invalid choice. Please try again:");
+            }
+        } while (choice < 1 || choice > 5);
     }
 }
