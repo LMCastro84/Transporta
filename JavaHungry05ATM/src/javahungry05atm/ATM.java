@@ -21,14 +21,47 @@ public class ATM {
 
         User curUser;
         while (true) {
-            
+
             //stay in the login prompt until successful login
-            curUser = ATM.mainMenuPrompt(theBank, sc);
-            
+            curUser = ATM.mainMenuPrompt(theBank, in);
+
             //stay in main menu until user quits
-            ATM.printUserMenu(curUser, sc);
+            ATM.printUserMenu(curUser, in);
 
         }
     }
 
+    /**
+     *
+     * @param theBank
+     * @param in
+     * @return
+     */
+    public static User mainMenuPrompt(Bank theBank, Scanner in) {
+
+        //initialize
+        String userID;
+        String pin;
+        User authenticatedUser;
+
+        //prompt the user for user ID/pin combo until a correct one is reached
+        do {
+            System.out.printf("\n\nWelcome to %s\n\n", theBank.getName());
+            System.out.print("Enter user ID: ");
+            userID = in.nextLine();
+            System.out.print("Enter pin: ");
+            pin = in.nextLine();
+
+            //try to get the user object correspondig to the ID and pin combo
+            authenticatedUser = theBank.userLogin(userID, pin);
+            if (authenticatedUser == null) {
+                System.out.println("Incorrect user ID/pin combination. Please "
+                        + "try again.");
+            }
+
+        } //continue looping until successful login
+        while (authenticatedUser == null);
+        return authenticatedUser;
+
+    }
 }
