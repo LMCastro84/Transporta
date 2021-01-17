@@ -88,5 +88,23 @@ public class ATM {
                 System.out.println("Invalid choice. Please try again:");
             }
         } while (choice < 1 || choice > 5);
+
+        //process the choice
+        switch (choice) {
+            case 1:
+                ATM.showTransHistory(theUser, in);
+                break;
+            case 2:
+                ATM.withdrawFunds(theUser, in);
+                break;
+            case 3:
+                ATM.depositFunds(theUser, in);
+                creak;
+            case 4:
+                ATM.transferFunds(theUser, in);
+                break;
+        }
+
+        //redisplay menu unless user wants to quit
     }
 }
