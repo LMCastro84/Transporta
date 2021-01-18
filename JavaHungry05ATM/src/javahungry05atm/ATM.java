@@ -118,7 +118,15 @@ public class ATM {
             //"(1-%d)" means the numbers of the existing accounts
             System.out.printf("Enter number between (1-%d) of the account whose"
                     + " transactions you want to see: ", theUser.numAccounts());
-        } while ();
+            //"-1" to coincide with the number of the account in the ArrayList
+            theAccount = in.nextInt()-1;
+            if (theAccount < 0 || theAccount >= theUser.numAccounts()){
+                System.out.println("Invalid account. Please try again.");
+            }
+        } while (theAccount < 0 || theAccount >= theUser.numAccounts());
+        
+        //print the transaction history
+        theUser.printAccountTransHistory(theAccount);
     }
 
 }
