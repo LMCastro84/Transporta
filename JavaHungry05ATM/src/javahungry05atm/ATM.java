@@ -3,9 +3,9 @@ package javahungry05atm;
 import java.util.Scanner;
 
 public class ATM {
-    
+
     public static void main(String[] args) {
-        
+
         Scanner in = new Scanner(System.in);
 
         //create Bank
@@ -18,7 +18,7 @@ public class ATM {
         Account newAccount = new Account("Checking", user, theBank);
         user.addAccount(newAccount);
         theBank.addAccount(newAccount);
-        
+
         User curUser;
         while (true) {
 
@@ -27,7 +27,7 @@ public class ATM {
 
             //stay in main menu until user quits
             ATM.printUserMenu(curUser, in);
-            
+
         }
     }
 
@@ -58,13 +58,13 @@ public class ATM {
                 System.out.println("Incorrect user ID/pin combination. Please "
                         + "try again.");
             }
-            
+
         } //continue looping until successful login
         while (authenticatedUser == null);
         return authenticatedUser;
-        
+
     }
-    
+
     public static void prinUserMenu(User theUser, Scanner in) {
         //print a summary of user's accounts
         theUser.printAccountsSummary();
@@ -83,7 +83,7 @@ public class ATM {
             System.out.println("");
             System.out.print("Enter choice: ");
             choice = in.nextInt();
-            
+
             if (choice < 1 || choice > 5) {
                 System.out.println("Invalid choice. Please try again:");
             }
@@ -110,4 +110,15 @@ public class ATM {
             ATM.prinUserMenu(theUser, in);
         }
     }
+
+    public static void showTransHistory(User theUser, Scanner in) {
+        int theAccount;
+        //get account whose transaction history to look at
+        do {
+            //"(1-%d)" means the numbers of the existing accounts
+            System.out.printf("Enter number between (1-%d) of the account whose"
+                    + " transactions you want to see: ", theUser.numAccounts());
+        } while ();
+    }
+
 }
