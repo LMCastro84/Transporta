@@ -50,4 +50,23 @@ public class Account {
     public String getUUID() {
         return this.uuid;
     }
+
+    /**
+     * Get summary line for the account
+     *
+     * @return the string summary
+     */
+    public String getSummaryLine() {
+        //get the account's balance
+        double balance = this.getBalance();
+
+        //format the summary line, dependig on whether the balance is negative
+        if (balance <= 0) {
+            //"$%.02f" means a floating number with only two decimals
+            return String.format("%s : $%.02f : %s", this.uuid, balance, this.name);
+        } else {
+            //"$(%.02f)" means a floating number with only two decimals
+            return String.format("%s : $(%.02f) : %s", this.uuid, balance, this.name);
+        }
+    }
 }
