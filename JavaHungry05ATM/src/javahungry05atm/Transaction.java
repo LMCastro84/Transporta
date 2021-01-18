@@ -26,7 +26,8 @@ public class Transaction {
 
     /**
      * Create new transaction
-     * @param amount    amount transacted
+     *
+     * @param amount amount transacted
      * @param inAccount account the transaction belongs to
      */
     public Transaction(double amount, Account inAccount) {
@@ -38,8 +39,9 @@ public class Transaction {
 
     /**
      * Create new transaction
-     * @param amount    amount transacted
-     * @param memo      memo of transaction
+     *
+     * @param amount amount transacted
+     * @param memo memo of transaction
      * @param inAccount account the transaction belongs to
      */
     public Transaction(double amount, String memo, Account inAccount) {
@@ -47,5 +49,14 @@ public class Transaction {
         this(amount, inAccount);
         //set the memo
         this.memo = memo;
+    }
+
+    /**
+     * Get the amount of the transaction
+     *
+     * @return the amount
+     */
+    public double getAmount() {
+        return this.amount;
     }
 }
