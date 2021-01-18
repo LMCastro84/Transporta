@@ -69,10 +69,15 @@ public class Account {
             return String.format("%s : $(%.02f) : %s", this.uuid, balance, this.name);
         }
     }
-    
-    public double getBalance(){
+
+    /**
+     * Get the balance of this account by adding the amounts of the transactions
+     *
+     * @return balance value
+     */
+    public double getBalance() {
         double balance = 0;
-        for (Transaction t : this.transactions){
+        for (Transaction t : this.transactions) {
             balance += t.getAmount();
         }
         return balance;
