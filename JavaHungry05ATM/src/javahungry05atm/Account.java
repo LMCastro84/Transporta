@@ -63,10 +63,10 @@ public class Account {
         //format the summary line, dependig on whether the balance is negative
         if (balance <= 0) {
             //"$%.02f" means a floating number with only two decimals
-            return String.format("%s : $%.02f : %s", this.uuid, balance, this.name);
+            return String.format("%s : %.02f€ : %s", this.uuid, balance, this.name);
         } else {
             //"$(%.02f)" means a floating number with only two decimals
-            return String.format("%s : $(%.02f) : %s", this.uuid, balance, this.name);
+            return String.format("%s : (%.02f)€ : %s", this.uuid, balance, this.name);
         }
     }
 
@@ -81,6 +81,17 @@ public class Account {
             balance += t.getAmount();
         }
         return balance;
+    }
+
+    /**
+     * Print the transaction history of the account
+     */
+    public void printTransHistory() {
+        System.out.printf("\nTransaction history for account %s\n", this.uuid);
+        for (int i = this.transactions.size() - 1; i >= 0; i--) {
+            System.out.printf(this.transactions.get(i).getSummaryLine());
+        }
+        System.out.println("");
     }
 
 }
