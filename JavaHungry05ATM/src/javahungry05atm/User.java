@@ -112,4 +112,15 @@ public class User {
     public String getFirstName() {
         return this.firstName;
     }
+
+    /**
+     * Print summaries for the accounts of this user
+     */
+    public void prinAccountsSummary() {
+        System.out.printf("\n%s's accounts summary ", this.firstName);
+        for (int i = 0; i < this.accounts.size(); i++) {
+            System.out.printf("%d) %s\n", this.accounts.get(i).getSummaryLine());
+        }
+        System.out.println("");
+    }
 }
