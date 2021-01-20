@@ -2,6 +2,8 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
+import jdk.nashorn.internal.runtime.ListAdapter;
+
 public class Doente {
 
 	/**
@@ -19,29 +21,33 @@ public class Doente {
 	 */
 	private static int nsc;
 
+	private static ArrayList<Integer> listaNSCs = new ArrayList<Integer>();
+
 	/**
 	 * localizacao actual do doente
 	 */
 	private Sala localizacao;
 
 	Scanner in = new Scanner(System.in);
-	
 
 	/**
 	 * Constructor
 	 * 
 	 * @param nome
-	 *            nome do doente
+	 *            do doente
 	 */
 	public Doente(String nome) {
-		this.nome = nome;
-
-		this.numSNS = setNumUtente();
+		System.out.print("Novo Doente.\nPor favor Insira o numero de SNS: ");
+		this.numSNS = in.nextInt();
 		this.nsc = setNsc();
 		this.localizacao = null;
 		registaDoente(nome, numSNS, nsc, localizacao);
 	}
 
+	/**
+	 * 
+	 * @return nome Doente
+	 */
 	public String getNome() {
 		return nome;
 	}
@@ -62,8 +68,17 @@ public class Doente {
 		return nsc;
 	}
 
-	public static void setNsc(int nsc) {
-		Doente.nsc = nsc;
+	public static void setNsc() {
+		do{
+			Doente.nsc = (int)(Math.random()*7);
+			for(int i = 0; i < Doente.listaNSCs.size(); i++ ){
+				if(Doente.listaNSCs.contains(Doente.nsc)){
+					break;
+				}else{
+					Doente.listaNSCs.add(Doente.nsc);
+				}
+			}
+		}while(Doente.listaNSCs.contains(Doente.nsc));
 	}
 
 	public Sala getLocalizacao() {
@@ -74,7 +89,6 @@ public class Doente {
 		this.localizacao = localizacao;
 	}
 
-	
 	public void registaDoente(String nome, int numSNS, int nsc, Sala localizacao) {
 		Hospital hospital = new Hospital();
 		hospital.setDoentes(doente);
