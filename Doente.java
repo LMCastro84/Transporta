@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -24,10 +25,13 @@ public class Doente {
 	private Sala localizacao;
 
 	Scanner in = new Scanner(System.in);
+	
 
 	/**
 	 * Constructor
-	 * @param nome nome do doente
+	 * 
+	 * @param nome
+	 *            nome do doente
 	 */
 	public Doente(String nome) {
 		this.nome = nome;
@@ -38,10 +42,6 @@ public class Doente {
 		registaDoente(nome, numSNS, nsc, localizacao);
 	}
 
-	public int numUtente(int numSNS) {
-		this.numSNS = numSNS;
-	}
-
 	public String getNome() {
 		return nome;
 	}
@@ -50,26 +50,20 @@ public class Doente {
 		this.nome = nome;
 	}
 
-	public int getNumUtente() {
+	public int getNumSNS() {
 		return numSNS;
 	}
 
-	public int setNumSNS() {
-		System.out.print("Introduzir Numero de Utente: ");
-		return in.nextInt();
+	public void setNumSNS(int numSNS) {
+		this.numSNS = numSNS;
 	}
 
-	public int getNsc() {
+	public static int getNsc() {
 		return nsc;
 	}
 
-	public int setNsc() {
-		Random rnd = new Random();
-		do{
-			int numero = rnd.nextInt(6);
-			for (Doente d : )
-		}while();
-		return numero;
+	public static void setNsc(int nsc) {
+		Doente.nsc = nsc;
 	}
 
 	public Sala getLocalizacao() {
@@ -80,8 +74,10 @@ public class Doente {
 		this.localizacao = localizacao;
 	}
 
-	public void registaDoente(String nome, int numSNS, int nsc, Sala localizacao){
+	
+	public void registaDoente(String nome, int numSNS, int nsc, Sala localizacao) {
 		Hospital hospital = new Hospital();
 		hospital.setDoentes(doente);
 	}
+
 }
