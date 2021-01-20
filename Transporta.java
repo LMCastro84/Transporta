@@ -1,5 +1,5 @@
 public class Transporta {
 	public static void main(String[] args) {
-		System.out.println("asd");
+		Hospital hospitalFoz = new Hospital("da Foz", "Porto", "Norte");
 	}
 }
