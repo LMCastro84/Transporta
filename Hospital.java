@@ -98,8 +98,8 @@ public class Hospital {
 		return listaGeralDoentes.toString();
 	}
 
-	public void setListaGeralDoentes(ArrayList<Doente> listaGeralDoentes) {
-		this.listaGeralDoentes = listaGeralDoentes;
+	public void setListaGeralDoentes(Doente doente) {
+		listaGeralDoentes.add(doente);
 	}
 
 	public String getListaAdmissaoAdultos() {
