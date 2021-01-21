@@ -161,4 +161,15 @@ public class User {
     public String getAccountUUID(int accountIndex) {
         return this.accounts.get(accountIndex).getUUID();
     }
+
+    /**
+     * Add a transaction to a particular account
+     *
+     * @param accountIndex the index of the account
+     * @param amount the amount of the transaction
+     * @param memo the memo of the transaction
+     */
+    public void addAccountTransaction(int accountIndex, double amount, String memo) {
+        this.accounts.get(accountIndex).addTransaction(amount, memo);
+    }
 }
