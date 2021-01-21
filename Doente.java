@@ -1,5 +1,8 @@
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Scanner;
+
+import jdk.nashorn.internal.runtime.ListAdapter;
 
 public class Doente {
 
@@ -18,6 +21,8 @@ public class Doente {
 	 */
 	private static int nsc;
 
+	private static ArrayList<Integer> listaNSCs = new ArrayList<Integer>();
+
 	/**
 	 * localizacao actual do doente
 	 */
@@ -27,21 +32,23 @@ public class Doente {
 
 	/**
 	 * Constructor
-	 * @param nome nome do doente
+	 * 
+	 * @param nome
+	 *            do doente
 	 */
 	public Doente(String nome) {
-		this.nome = nome;
-
-		this.numSNS = setNumUtente();
+		System.out.print("Novo Doente.\nPor favor Insira o numero de SNS: ");
+		this.numSNS = in.nextInt();
 		this.nsc = setNsc();
 		this.localizacao = null;
-		registaDoente(nome, numSNS, nsc, localizacao);
+		System.out.println("Doente criado.");
+		System.out.println("Nome: "+nome+",\nNumero SNS: "+numSNS+",\nNSC: ");
 	}
 
-	public int numUtente(int numSNS) {
-		this.numSNS = numSNS;
-	}
-
+	/**
+	 * 
+	 * @return nome Doente
+	 */
 	public String getNome() {
 		return nome;
 	}
@@ -50,26 +57,26 @@ public class Doente {
 		this.nome = nome;
 	}
 
-	public int getNumUtente() {
+	public int getNumSNS() {
 		return numSNS;
 	}
 
-	public int setNumSNS() {
-		System.out.print("Introduzir Numero de Utente: ");
-		return in.nextInt();
-	}
-
-	public int getNsc() {
+	public static int getNsc() {
 		return nsc;
 	}
 
-	public int setNsc() {
-		Random rnd = new Random();
-		do{
-			int numero = rnd.nextInt(6);
-			for (Doente d : )
-		}while();
-		return numero;
+	public static int setNsc() {
+		do {
+			Doente.nsc = (int) (Math.random() * 7);
+			for (int i = 0; i < Doente.listaNSCs.size(); i++) {
+				if (Doente.listaNSCs.contains(Doente.nsc)) {
+					break;
+				} else {
+					Doente.listaNSCs.add(Doente.nsc);
+				}
+			}
+		} while (Doente.listaNSCs.contains(Doente.nsc));
+		return Doente.nsc;
 	}
 
 	public Sala getLocalizacao() {
@@ -80,8 +87,4 @@ public class Doente {
 		this.localizacao = localizacao;
 	}
 
-	public void registaDoente(String nome, int numSNS, int nsc, Sala localizacao){
-		Hospital hospital = new Hospital();
-		hospital.setDoentes(doente);
-	}
 }
