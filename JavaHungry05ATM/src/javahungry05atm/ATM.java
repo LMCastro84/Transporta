@@ -135,4 +135,54 @@ public class ATM {
         theUser.printAccountTransHistory(theAccount);
     }
 
+    public static void transferFunds(User theUser, Scanner in) {
+        //initialize
+        int fromAccount;
+        int toAccount;
+        double amount;
+        double accountBal;
+
+        //get the account to transfer from
+        do {
+            System.out.printf("Enter the number (1-%d) of the account to transfer\n"
+                    + " from: ");
+            fromAccount = in.nextInt() - 1;
+            if (fromAccount < 0 || fromAccount >= theUser.numAccounts()) {
+                System.out.println("Invalid account. Please try again.");
+            }
+        } while (fromAccount < 0 || fromAccount >= theUser.numAccounts());
+        accountBal = theUser.getAccountBalance(fromAccount);
+
+        //get the account to transfer to
+        do {
+            System.out.printf("Enter the number (1-%d) of the account to transfer\n"
+                    + " to: ");
+            toAccount = in.nextInt() - 1;
+            if (toAccount < 0 || toAccount >= theUser.numAccounts()) {
+                System.out.println("Invalid account. Please try again.");
+            }
+        } while (toAccount < 0 || toAccount >= theUser.numAccounts());
+
+        //get the amount to transfer
+        do {
+            System.out.printf("Enter the amount to transfer (max %.02f€): ",
+                    accountBal);
+            amount = in.nextDouble();
+            if (amount < 0) {
+                System.out.println("Amount must be grater than zero.");
+            } else if (amount > accountBal) {
+                System.out.printf("Amount must not be greater than balance\n"
+                        + "balance of %.02f€.\n", accountBal);
+            }
+        } while (amount < 0 || amount > accountBal);
+
+        // finally, do the transfer
+        //"-1*amount" transforms into a negative value
+        theUser.addAccountTransaction(fromAccount, -1 * amount,
+                String.format("Transfer to account %s", theUser.getAccountUUID(toAccount)));
+        theUser.addAccountTransaction(toAccount, amount,
+                String.format("Transfer to account %s", theUser.getAccountUUID(fromAccount)));
+
+    }
+//1:42:00
 }
