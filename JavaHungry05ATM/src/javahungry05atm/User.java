@@ -151,4 +151,14 @@ public class User {
     public double getAccountBalance(int accountIndex) {
         return this.accounts.get(accountIndex).getBalance();
     }
+
+    /**
+     * Get the UUIDof a particular account
+     *
+     * @param accountIndex the index of the account to use
+     * @return the UUID of the account
+     */
+    public String getAccountUUID(int accountIndex) {
+        return this.accounts.get(accountIndex).getUUID();
+    }
 }
