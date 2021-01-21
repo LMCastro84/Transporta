@@ -41,7 +41,8 @@ public class Doente {
 		this.numSNS = in.nextInt();
 		this.nsc = setNsc();
 		this.localizacao = null;
-		registaDoente(nome, numSNS, nsc, localizacao);
+		System.out.println("Doente criado.");
+		System.out.println("Nome: "+nome+",\nNumero SNS: "+numSNS+",\nNSC: ");
 	}
 
 	/**
@@ -60,25 +61,22 @@ public class Doente {
 		return numSNS;
 	}
 
-	public void setNumSNS(int numSNS) {
-		this.numSNS = numSNS;
-	}
-
 	public static int getNsc() {
 		return nsc;
 	}
 
-	public static void setNsc() {
-		do{
-			Doente.nsc = (int)(Math.random()*7);
-			for(int i = 0; i < Doente.listaNSCs.size(); i++ ){
-				if(Doente.listaNSCs.contains(Doente.nsc)){
+	public static int setNsc() {
+		do {
+			Doente.nsc = (int) (Math.random() * 7);
+			for (int i = 0; i < Doente.listaNSCs.size(); i++) {
+				if (Doente.listaNSCs.contains(Doente.nsc)) {
 					break;
-				}else{
+				} else {
 					Doente.listaNSCs.add(Doente.nsc);
 				}
 			}
-		}while(Doente.listaNSCs.contains(Doente.nsc));
+		} while (Doente.listaNSCs.contains(Doente.nsc));
+		return Doente.nsc;
 	}
 
 	public Sala getLocalizacao() {
@@ -87,11 +85,6 @@ public class Doente {
 
 	public void setLocalizacao(Sala localizacao) {
 		this.localizacao = localizacao;
-	}
-
-	public void registaDoente(String nome, int numSNS, int nsc, Sala localizacao) {
-		Hospital hospital = new Hospital();
-		hospital.setDoentes(doente);
 	}
 
 }
