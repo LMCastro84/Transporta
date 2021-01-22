@@ -42,7 +42,7 @@ public class Doente {
 		this.nsc = setNsc();
 		this.localizacao = null;
 		System.out.println("Doente criado.");
-		System.out.println("Nome: "+nome+",\nNumero SNS: "+numSNS+",\nNSC: ");
+		System.out.println("Nome: "+nome+",\nNumero SNS: "+numSNS+",\nNSC: "+nsc);
 	}
 
 	/**
