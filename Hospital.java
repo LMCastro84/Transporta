@@ -106,8 +106,8 @@ public class Hospital {
 		return listaAdmissaoAdultos.toString();
 	}
 
-	public void setListaAdmissaoAdultos(ArrayList<Doente> listaAdmissaoAdultos) {
-		this.listaAdmissaoAdultos = listaAdmissaoAdultos;
+	public void setListaAdmissaoAdultos(Doente doente) {
+		listaAdmissaoAdultos.add(doente);
 	}
 
 	public String getListaAdmissaoPediatria() {
